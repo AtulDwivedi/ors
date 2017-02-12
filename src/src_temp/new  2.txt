@@ -1,0 +1,10 @@
+ <tr bgcolor =#FEF7E9 wdth =100%><td width="48%" bgcolor="#F3E8DA"><strong>
+      <font color="#666600" size="3" face="Times New Roman, Times, serif">UserName&nbsp;
+       
+      </font></strong>
+     </td>
+    
+     <td width="52%" bgcolor="#F3E8DA">
+  <input TYPE="text" NAME="username" size="30" maxlength=30 value="<% out.print(cep.username1); %>"></td>
+                            </tr>
+                            

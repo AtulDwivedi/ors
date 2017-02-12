@@ -1,0 +1,24 @@
+<web-app>
+
+<context-param>
+<param-name>oracletable</param-name>
+<param-value>yes</param-value>
+</context-param>
+
+<session-config>
+    <session-timeout>
+            30
+    </session-timeout>
+</session-config>
+
+
+<listener>
+<listener-class>listener.ContxtListnr</listener-class>
+</listener>
+
+<welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+
+
+</web-app>
