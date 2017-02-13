@@ -59,7 +59,7 @@
         <div align="right" >
             <p><img src="images\Login.jpg" width="209" height="166"></p>
         </div>
-        <form name="login" method="post" action="checkLogin.jsp">
+        <form name="login" method="post" action="LoginServlet">
 
             <div align="right">
                 <table width="219" height="230" border="1" align="right">
