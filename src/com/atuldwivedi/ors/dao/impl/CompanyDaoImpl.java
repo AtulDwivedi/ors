@@ -5,9 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.atuldwivedi.ors.dao.service.CompanyDao;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import com.atuldwivedi.ors.model.Company;
-
-import conn.ConnectionProvider;
 
 public class CompanyDaoImpl implements CompanyDao {
 
@@ -16,8 +15,9 @@ public class CompanyDaoImpl implements CompanyDao {
 	@Override
 	public int registerCompany(Company company) {
 		int retVal = 0;
-		con = ConnectionProvider.getCon();
+		
 		try {
+			con = ConnectionProvider.getConnection();
 			PreparedStatement pstmt = con.prepareStatement("INSERT INTO COMPANYREGISTER VALUES(?,?,?,?,?,?,?,?)");
 			pstmt.setString(1, company.getUserName());
 			pstmt.setString(2, company.getCompName());

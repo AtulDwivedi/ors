@@ -4,4 +4,5 @@ import com.atuldwivedi.ors.model.Login;
 
 public interface LoginService {
 	public boolean checkLogin(Login login);
+	public int insertLogin(Login login);
 }

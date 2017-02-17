@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.atuldwivedi.ors.model.Company;
 import com.atuldwivedi.ors.model.Login;
@@ -44,18 +45,35 @@ public class RegisterCompanyServlet extends HttpServlet {
 		int contact = Integer.parseInt(request.getParameter("contact"));
 		int cutOff = Integer.parseInt(request.getParameter("cutoff"));
 		
-		Login login = new Login();
-		login.setUserName(userName);
-		login.setPassword(password);
-		login.setUserType("comp");
+		
 		
 		Company company = new Company(compName, address, postInComp, criteria, userName, email, contact, cutOff);
 		
-		LoginService loginService = new LoginServiceImpl();
+		
 		CompanyService companyService = new CompanyServiceImpl();
 		
-		int i =companyService.registerCompany(company);
-		System.out.println(i);
+		int registeredUserCount = companyService.registerCompany(company);
+		
+		int loginInsertCount = 0;
+		if(registeredUserCount == 1){
+			
+			Login login = new Login();
+			login.setUserName(userName);
+			login.setPassword(password);
+			login.setUserType("comp");
+			
+			LoginService loginService = new LoginServiceImpl();
+			loginInsertCount = loginService.insertLogin(login);
+		}
+		
+		if(loginInsertCount == 1){
+			HttpSession session = request.getSession();
+			session.setAttribute("s1", company.getUserName());
+			response.sendRedirect("CompanyHomePage.jsp");
+		}
+		else{
+			response.sendRedirect("index.jsp");
+		}
 	}
 
 }

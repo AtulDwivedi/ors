@@ -10,10 +10,20 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public boolean checkLogin(Login login) {
 		boolean result = false;
-		
+
 		LoginDao loginDao = new LoginDaoImpl();
 		result = loginDao.checkLogin(login);
-		
+
+		return result;
+	}
+
+	@Override
+	public int insertLogin(Login login) {
+		int result = 0;
+
+		LoginDao loginDao = new LoginDaoImpl();
+		result = loginDao.insertLogin(login);
+
 		return result;
 	}
 
