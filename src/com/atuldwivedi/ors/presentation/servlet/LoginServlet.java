@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.atuldwivedi.ors.model.Login;
 import com.atuldwivedi.ors.service.impl.LoginServiceImpl;
@@ -49,10 +50,14 @@ public class LoginServlet extends HttpServlet {
 			}
 			else if(userType.equals("comp"))
 			{
+				HttpSession session = request.getSession();
+				session.setAttribute("s1", userName);
 				response.sendRedirect("CompanyHomePage.jsp");
 			}
 			else if(userType.equals("cand"))
 			{
+				HttpSession session = request.getSession();
+				session.setAttribute("s1", userName);
 				response.sendRedirect("CandidateHomePage.jsp");
 			}
 			else
