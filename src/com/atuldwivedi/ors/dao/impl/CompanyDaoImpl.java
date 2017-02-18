@@ -35,4 +35,27 @@ public class CompanyDaoImpl implements CompanyDao {
 		return retVal;
 	}
 
+	@Override
+	public int updateCompany(Company company) {
+		int updatedRecordCount = 0;
+		try {
+			con = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = con.prepareStatement("UPDATE COMPANYREGISTER SET NAME=?,ADDR=?,POST=?,CRITERIA=?,EMAIL=?,CONTACT=?,CUTOFF=? WHERE USERNAME=?");
+			
+			pstmt.setString(1, company.getCompName());
+			pstmt.setString(2, company.getAddress());
+			pstmt.setString(3, company.getPostInComp());
+			pstmt.setString(4, company.getCriteria());
+			pstmt.setString(5, company.getEmail());
+			pstmt.setInt(6, company.getContact());
+			pstmt.setInt(7, company.getCutOff());
+			pstmt.setString(8, company.getUserName());
+			
+			updatedRecordCount = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return updatedRecordCount;
+	}
+
 }

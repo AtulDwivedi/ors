@@ -12,4 +12,10 @@ public class CompanyServiceImpl implements CompanyService {
 		CompanyDao companyDao = new CompanyDaoImpl();
 		return companyDao.registerCompany(company);
 	}
+
+	@Override
+	public int updateCompany(Company company) {
+		CompanyDao companyDao = new CompanyDaoImpl();
+		return companyDao.updateCompany(company);
+	}
 }

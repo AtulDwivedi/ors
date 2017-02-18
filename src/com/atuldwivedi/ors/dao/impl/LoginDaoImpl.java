@@ -22,8 +22,8 @@ public class LoginDaoImpl implements LoginDao {
 		String userName = login.getUserName();
 		String password = login.getPassword();
 
-		try {
-			con = ConnectionProvider.getConnection();
+		try{
+			con = ConnectionProvider.getConnection(); 
 			stmt = con.createStatement();
 			rs = stmt.executeQuery("SELECT * FROM LOGIN");
 
@@ -36,37 +36,19 @@ public class LoginDaoImpl implements LoginDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		finally{
-			if(con != null){
-				try {
-					con.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
 		return result;
 	}
 
 	@Override
 	public int insertLogin(Login login) {
 		int insertedRecordCount = 0;
-		
-		try {
-			con = ConnectionProvider.getConnection();
+
+		try{
+			con = ConnectionProvider.getConnection(); 
 			stmt = con.createStatement();
 			insertedRecordCount = stmt.executeUpdate("INSERT INTO LOGIN VALUES('"+login.getUserName()+"', '"+login.getPassword()+"', '"+login.getUserType()+"')");
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		finally{
-			if(con != null){
-				try {
-					con.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
 		}
 		return insertedRecordCount;
 	}
