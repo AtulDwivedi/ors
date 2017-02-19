@@ -108,7 +108,7 @@
                 <td width="1" height="512"><jsp:include page="Companymenu.html"/></td>
                 <td width="961" bgcolor="#6699CC">
                 
-                    <form name="form1" method="post" action="SaveJobDetails.jsp">
+                    <form name="form1" method="post" action="JobServlet/add">
                         <table width="517" height="334" border="1" align="center" bgcolor="#FFCCCC">
                             <tr bordercolor="#0099FF">
                                 <td height="30" colspan="2" bgcolor="#E3EAF4"><div align="center" class="style1">Job Description </div></td>

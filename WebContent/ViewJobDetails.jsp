@@ -1,5 +1,5 @@
 
-<%@page import="conn.*,java.sql.*,conn.*"%>
+<%@page import="conn.*,java.sql.*,com.atuldwivedi.ors.dao.util.ConnectionProvider"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -49,7 +49,7 @@
 	    //ResultSet rs=null;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con=ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
 				System.out.println("JavaReport: bean.ViewCompRequirement- Connection has been created.");
 			}
@@ -65,7 +65,7 @@
 		
       <tr>
         <td height="28" align="center" bordercolor="#20450A" bgcolor="#E9DDD6" ><span class="style6">
-        <% out.println(rs.getString(1));%>
+        <% out.println(rs.getLong(1));%>
         </span></td>
       <td bordercolor="#20450A" align="center" bgcolor="#E9DDD6" ><span class="style6">
           <% out.println(rs.getString(2));%>
@@ -74,16 +74,16 @@
           <% out.println(rs.getString(3));%>
         </span></td>
         <td bordercolor="#20450A" align="center" bgcolor="#E9DDD6"><span class="style6">
-          <% out.println(rs.getString(4));%>
+          <% out.println(rs.getInt(4));%>
         </span></td>
         <td bordercolor="#20450A" align="center" bgcolor="#E9DDD6"><span class="style6">
-          <% out.println(rs.getString(5));%>
+          <% out.println(rs.getLong(5));%>
         </span></td>
         <td bordercolor="#20450A" align="center" bgcolor="#E9DDD6"><span class="style6">
           <% out.println(rs.getString(6));%>
         </span></td>
          <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="EditJob.jsp?jid=<% out.println(rs.getString(1));%>"><strong>Edit</strong></a></div></td>
-                <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="DeleteJobDetails.jsp?jid=<% out.println(rs.getString(1));%>"><strong>Delete</strong></a></div></td>
+                <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="JobServlet/delete?jobId=<% out.println(rs.getString(1));%>"><strong>Delete</strong></a></div></td>
       </tr>
       <%
 	  }

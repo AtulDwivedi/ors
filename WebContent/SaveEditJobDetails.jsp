@@ -1,11 +1,11 @@
-<%@page import="conn.*,java.sql.*;"%>
+<%@page import="com.atuldwivedi.ors.dao.util.ConnectionProvider,java.sql.*;"%>
 <jsp:useBean id="sejd" class="bean.SaveEditJobDetails" />
 <jsp:setProperty name="sejd" property="*" />
 <%
 	String c1=(String) session.getAttribute("s1");
 	String name=null;
 	try{
-		Connection con=ConnectionProvider.getCon();
+		Connection con=ConnectionProvider.getConnection();
 		Statement stmt=con.createStatement();
 		ResultSet rs=stmt.executeQuery("SELECT * FROM COMPANYREGISTER WHERE USERNAME='"+c1+"'");
 		while(rs.next()){

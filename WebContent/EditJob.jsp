@@ -1,5 +1,5 @@
 
-<%@page import="conn.*,java.sql.*;"%>
+<%@page import="com.atuldwivedi.ors.dao.util.ConnectionProvider,java.sql.*;"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -36,23 +36,23 @@
                 //String jsal =request.getParameter("jsal");
                 //String jdate =request.getParameter("jdate");
                 //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-                Connection con = ConnectionProvider.getCon();
+                Connection con = ConnectionProvider.getConnection();
                 Statement st = con.createStatement(); 
 				System.out.println("            ...!!!...            ");
 						System.out.println("JSP Report: file.EditJob- Connection has been created."); 
-                ResultSet rs = st.executeQuery("select * from JobDetail where Job_Id='"+jid+"'");
+                ResultSet rs = st.executeQuery("select * from JobDetail where Job_Id='"+Long.parseLong(jid)+"'");
                 while (rs.next())
                     {  
-                    jid=rs.getString(1);
+                    long jida = rs.getLong(1);
                     String jpost=rs.getString(2);
                     String jcriteria=rs.getString(3);
-                    String jvac=rs.getString(4);
-                    String jsal=rs.getString(5);
+                    int jvac=rs.getInt(4);
+                    Long jsal= rs.getLong(5);
                     String jdate=rs.getString(6);
 					//String eid=rs.getString(8);
       
                    %>
-                <form method="post" action="SaveEditJobDetails.jsp">
+                <form method="post" action="JobServlet/edit">
                   <table width="531" height="276" border="1" align="center" bordercolor="#999900" bgcolor="#EBECE6">
                 
   <tr bordercolor="#999933" bgcolor="#EBECE6">
