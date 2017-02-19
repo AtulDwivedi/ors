@@ -78,7 +78,7 @@ Statement st = con.createStatement();
             cutoff = rs.getDouble(5);
         }
                     %>
-                    <form name="frm" action="edit" method="post" onsubmit="return check()">
+                    <form name="frm" action="ExamServlet/edit" method="post" onsubmit="return check()">
                         <table width="449" border="1" align="center">
                             <tr>
                                 <td colspan="2"><div align="center"><strong>Edit Exam Details</strong></div></td>
@@ -97,8 +97,8 @@ Statement st = con.createStatement();
                             </tr>
                             <tr>
                                 <td colspan="2" align="center">
-                                    <input name="jobid" type="hidden" id="jobId" value="<%=jid%>">
-                                    <input name="examid" type="hidden" id="examId" value="<%=eid%>">
+                                    <input name="jobId" type="hidden" id="jobId" value="<%=jid%>">
+                                    <input name="examId" type="hidden" id="examId" value="<%=eid%>">
                                 <input type="submit" name="update" id="update" value="Update" ></td>
                             </tr>
                             <tr>

@@ -93,8 +93,25 @@ public class ExamServlet extends HttpServlet {
 		
 		if(requestUri.contains("add")){
 			CompanyService companyService = new CompanyServiceImpl();
+			String post = "";
+			
+				Connection con;
+				try {
+					con = ConnectionProvider.getConnection();
+					Statement stmt = con.createStatement();
+					ResultSet rs = stmt.executeQuery("SELECT POST FROM JOBDETAIL WHERE JOB_ID = "+Long.parseLong(request.getParameter("jobId"))+" AND NAME = '"+(String)session.getAttribute("s1")+"'");
+				rs.next();
+				post = rs.getString(1);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+			
+			
+			
+			
 			Exam exam = new Exam(Long.parseLong(request.getParameter("jobId")), 
-					request.getParameter("post"), 
+					post, 
 					Long.parseLong(request.getParameter("eid")), 
 					request.getParameter("ename"), 
 					Double.parseDouble(request.getParameter("coff")), 
@@ -119,7 +136,12 @@ public class ExamServlet extends HttpServlet {
 			
 			CompanyService companyService = new CompanyServiceImpl();
 			companyService.editExam(exam);
-			response.sendRedirect(request.getContextPath() + "/ExamView.jsp");
+			
+			List<Long> jobIds = companyService.getJobIdsOfExamsForCompany((String)session.getAttribute("s1"));
+			request.setAttribute("jobIds", jobIds);
+			List<Exam> exams = companyService.getExamsByJobIdAndCompanyId(0, (String)session.getAttribute("s1"));
+			request.setAttribute("exams", exams);
+			request.getRequestDispatcher("../ExamView.jsp").forward(request, response);
 		}
 	}
 

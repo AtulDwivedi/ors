@@ -9,11 +9,11 @@ public class ConnectionProvider {
 	public static Connection getConnection() throws SQLException{
 		if(con == null){
 			try {
-				Class.forName("org.h2.Driver");
+				Class.forName("oracle.jdbc.driver.OracleDriver");
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
-			con = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "jdbc", "jdbc");
 		}
 		return con;
 	}

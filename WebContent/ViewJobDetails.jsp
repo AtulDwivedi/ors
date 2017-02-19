@@ -54,7 +54,7 @@
 				System.out.println("JavaReport: bean.ViewCompRequirement- Connection has been created.");
 			}
 			Statement stmt=con.createStatement();
-			ResultSet rs=stmt.executeQuery("SELECT * FROM JOBDETAIL");
+			ResultSet rs=stmt.executeQuery("SELECT * FROM JOBDETAIL where name = '"+(String)session.getAttribute("s1")+"'");
 		
 		//vcr.fetchCompRequirement();
 		

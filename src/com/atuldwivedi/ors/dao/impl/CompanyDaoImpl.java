@@ -66,11 +66,11 @@ public class CompanyDaoImpl implements CompanyDao {
 
 	@Override
 	public int createJob(Job job) {
-		int retVal = 0;
+		int jobInsert = 0;
 		try{
 			con = ConnectionProvider.getConnection();
 
-			con.setAutoCommit(false);
+			con.setAutoCommit(true);
 			PreparedStatement pst1=con.prepareStatement("INSERT INTO JOBDETAIL VALUES(?,?,?,?,?,?,?)");
 			pst1.setLong(1,job.getJobId());
 			pst1.setString(2,job.getPost());
@@ -79,26 +79,26 @@ public class CompanyDaoImpl implements CompanyDao {
 			pst1.setLong(5,job.getSalary());
 			pst1.setString(6,job.getExpiryDate());
 			pst1.setString(7,job.getCompanyId());
-			int jobInsert = pst1.executeUpdate();
+			jobInsert = pst1.executeUpdate();
 
-			PreparedStatement pst2=con.prepareStatement("INSERT INTO EXAM VALUES(?,?,?,?,?,?)");
-			pst2.setLong(1,job.getJobId());
-			pst2.setString(2,job.getPost());
-			pst2.setString(3,null);
-			pst2.setString(4,null);
-			pst2.setString(5,null);
-			pst2.setString(6,job.getCompanyId());
-			int examInsert  = pst2.executeUpdate();
-
-			if(jobInsert == 1 && examInsert == 1){
-				con.commit();
-				retVal = 1;
-			}
+//			PreparedStatement pst2=con.prepareStatement("INSERT INTO EXAM VALUES(?,?,?,?,?,?)");
+//			pst2.setLong(1,job.getJobId());
+//			pst2.setString(2,job.getPost());
+//			pst2.setString(3,null);
+//			pst2.setString(4,null);
+//			pst2.setString(5,null);
+//			pst2.setString(6,job.getCompanyId());
+//			int examInsert  = pst2.executeUpdate();
+//
+//			if(jobInsert == 1 && examInsert == 1){
+//				con.commit();
+//				retVal = 1;
+//			}
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		return retVal;
+		return jobInsert;
 	}
 
 	@Override
@@ -107,10 +107,14 @@ public class CompanyDaoImpl implements CompanyDao {
 		try {
 			con = ConnectionProvider.getConnection();
 			PreparedStatement pstmt = con.prepareStatement("DELETE FROM JOBDETAIL WHERE JOB_ID=? AND NAME=?");
+			PreparedStatement pstmt2 = con.prepareStatement("DELETE FROM EXAM WHERE JOB_ID=? AND COMP_NAME=?");
 
 			pstmt.setLong(1, jobId);
 			pstmt.setString(2, companyId);
-
+			
+			pstmt2.setLong(1, jobId);
+			pstmt2.setString(2, companyId);
+			pstmt2.executeUpdate();
 			deletedRecordCount = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -177,8 +181,10 @@ public class CompanyDaoImpl implements CompanyDao {
 	@Override
 	public int editExam(Exam exam) {
 		int editExam = 0;
-		String updateExamQuery = "UPDATE EXAM SET EXAM_NAME=?, CUOFF=? WHERE COMP_NAME=? AND JOB_ID=? AND EXAM_ID=?";
-		try(Connection con = ConnectionProvider.getConnection(); PreparedStatement pstmt = con.prepareStatement(updateExamQuery)){
+		String updateExamQuery = "UPDATE EXAM SET EXAM_NAME=?, CUtOFF=? WHERE COMP_NAME=? AND JOB_ID=? AND EXAM_ID=?";
+		try{
+			Connection con = ConnectionProvider.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(updateExamQuery);
 			pstmt.setString(1, exam.getExamName());
 			pstmt.setDouble(2, exam.getCutOff());
 			pstmt.setString(3, exam.getCompanyId());
@@ -217,7 +223,7 @@ public class CompanyDaoImpl implements CompanyDao {
 		try {
 			Connection con = ConnectionProvider.getConnection();
 			Statement	stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT DISTINCT(JOB_ID) FROM EXAM WHERE COMP_NAME ='"+ comapanyId +"'");
+			ResultSet rs = stmt.executeQuery("SELECT DISTINCT(JOB_ID) FROM JOBDETAIL WHERE NAME ='"+ comapanyId +"'");
 			
 			while(rs.next()){
 				jobIds.add((Long)rs.getLong(1));

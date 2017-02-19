@@ -40,7 +40,7 @@
                 Statement st = con.createStatement(); 
 				System.out.println("            ...!!!...            ");
 						System.out.println("JSP Report: file.EditJob- Connection has been created."); 
-                ResultSet rs = st.executeQuery("select * from JobDetail where Job_Id='"+Long.parseLong(jid)+"'");
+                ResultSet rs = st.executeQuery("select * from JobDetail where name = '"+(String)session.getAttribute("s1")+"' and Job_Id='"+Long.parseLong(jid)+"'");
                 while (rs.next())
                     {  
                     long jida = rs.getLong(1);
