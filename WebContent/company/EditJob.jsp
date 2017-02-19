@@ -52,7 +52,7 @@
 					//String eid=rs.getString(8);
       
                    %>
-                <form method="post" action="JobServlet/edit">
+                <form method="post" action="<%=request.getContextPath()+"/JobServlet/edit" %>">
                   <table width="531" height="276" border="1" align="center" bordercolor="#999900" bgcolor="#EBECE6">
                 
   <tr bordercolor="#999933" bgcolor="#EBECE6">

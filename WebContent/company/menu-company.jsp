@@ -17,24 +17,24 @@
 <table width="160" height="593" border="0" bordercolor="#CD9967" bgcolor="#666734">
   <tr>
   	<td width="155" valign="top" bgcolor="#CD9967">
-      <p align="center"><img src="images/logo[1] copy.jpg" width="160" height="150"/></p>
+      <p align="center"><img src="<%=request.getContextPath()+"/images/logo[1] copy.jpg"%>" width="160" height="150"/></p>
 	  <p>
       <ul>
 	    <li><a href="<%=request.getContextPath() +"/index.jsp" %>">Home</a><br>
         </li><li><a href="<%=request.getContextPath() +"/EditCompanyDetailsServlet" %>">Edit Profile</a><br>
         </li><li><a href="<%=request.getContextPath() +"/ComChangePassword.jsp" %>">Change Password</a><br>
         <span class="style4"> Job Details</span></li>
-        <li><a href="<%=request.getContextPath() +"/AddJobDetails.jsp" %>"> Add</a><br>
+        <li><a href="<%=request.getContextPath() +"/company/AddJobDetails.jsp" %>"> Add</a><br>
         </li>
-        <li><a href="<%=request.getContextPath() +"/ViewJobDetails.jsp" %>">View</a><br> 
+        <li><a href="<%=request.getContextPath() +"/company/ViewJobDetails.jsp" %>">View</a><br> 
           <span class="style4">Exam</span><br>
         </li>
         <li><a href="<%=request.getContextPath() +"/ExamServlet/create" %>">Exam Creation</a></li>
         <li><a href="<%=request.getContextPath() +"/ExamServlet/view" %>">Exam View</a><br>
         <span class="style4">Question</span></li>
-        <li><a href="<%=request.getContextPath() +"/AddQuestions.jsp" %>">Add</a><br>
+        <li><a href="<%=request.getContextPath() +"/company/AddQuestions.jsp" %>">Add</a><br>
         </li>
-        <li><a href="<%=request.getContextPath() +"/ViewQues.jsp" %>">View</a><br>
+        <li><a href="<%=request.getContextPath() +"/company/ViewQues.jsp" %>">View</a><br>
         </li>
         <li><a href="Login.jsp"> LogOut</a></li>
         <br>

@@ -109,12 +109,12 @@
 						<td bordercolor="#344631" bgcolor="#F8E0E0"><div
 								align="center">
 								<a
-									href="show-edit?examId=<%=exam.getExamId()%>&jobId=<%=exam.getJobId()%>">Edit</a>
+									href="<%=request.getContextPath()+"/ExamServlet/show-edit?examId="+exam.getExamId()+"&jobId="+exam.getJobId()%>">Edit</a>
 							</div></td>
 						<td bordercolor="#344631" bgcolor="#F8E0E0"><div
 								align="center">
 								<a
-									href="delete?examId=<%=exam.getExamId() %>&jobId=<%=exam.getJobId()%>">Delete</a>
+									href="<%=request.getContextPath()+"/ExamServlet/delete?examId="+exam.getExamId()+"&jobId="+exam.getJobId()%>">Delete</a>
 							</div></td>
 						<%}}}%>
 					

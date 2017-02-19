@@ -156,7 +156,7 @@
                         
                     </span>
                     <div class="Reg" align="center">
-                        <form method="POST" action="EditCompanyDetailsServlet" name="form1" onSubmit="return check()">
+                        <form method="POST" action="<%=request.getContextPath()+"/EditCompanyDetailsServlet" %>" name="form1" onSubmit="return check()">
                             <table width =66% border=0 cellpadding=3 cellspacing=0 bordercolor="#FFFFFF" >
                                 <tr bgcolor="" width=100%>
                                     <td colspan="2" bgcolor="#F5E7DC">

@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 			{
 				HttpSession session = request.getSession();
 				session.setAttribute("s1", userName);
-				response.sendRedirect("CompanyHomePage.jsp");
+				response.sendRedirect("company/CompanyHomePage.jsp");
 			}
 			else if(userType.equals("cand"))
 			{

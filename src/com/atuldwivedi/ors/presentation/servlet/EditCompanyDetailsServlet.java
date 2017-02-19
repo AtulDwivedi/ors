@@ -59,8 +59,7 @@ public class EditCompanyDetailsServlet extends HttpServlet {
 				int cutOff = rs.getInt(8);
 				Company company = new Company(comUserName, address, postInComp, criteria, userName, email, contact, cutOff);
 				request.setAttribute("com", company);
-				RequestDispatcher rd = request.getRequestDispatcher("EditComProfile.jsp");
-				rd.forward(request, response);
+				request.getRequestDispatcher("/company/EditComProfile.jsp").forward(request, response);
 //				response.sendRedirect("EditComProfile.jsp");
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -88,8 +87,8 @@ public class EditCompanyDetailsServlet extends HttpServlet {
 		int updateCompany = companyService.updateCompany(company);
 		
 		if( updateCompany ==1){
-			RequestDispatcher rd = request.getRequestDispatcher("CompanyHomePage.jsp");
-			rd.forward(request, response);
+			request.getRequestDispatcher("/company/CompanyHomePage.jsp").forward(request, response);
+			
 		}
 		else{
 			response.sendRedirect("index.jsp");

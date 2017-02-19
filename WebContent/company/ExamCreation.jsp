@@ -85,7 +85,7 @@
            
                     </table>
                   <p>&nbsp;</p>
-                    <form name="form1" method="post" action="ExamServlet/add" onSubmit="return check()">
+                    <form name="form1" method="post" action="<%=request.getContextPath()+"/ExamServlet/add"%>" onSubmit="return check()">
                         <table width="318" height="166" border="1" align="center">
                             <tr>
                                 <td width="138" height="40" bordercolor="#666666" bgcolor="#B0CDD7"><div align="center" class="style4 style20"><strong>Select a JobID</strong></div></td>

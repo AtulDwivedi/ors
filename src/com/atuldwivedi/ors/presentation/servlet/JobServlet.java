@@ -46,10 +46,10 @@ public class JobServlet extends HttpServlet {
 			CompanyService companyService = new CompanyServiceImpl();
 			int i = companyService.deletJobById(Long.parseLong(request.getParameter("jobId")), (String)session.getAttribute("s1"));
 			if(i == 1){
-				response.sendRedirect(request.getContextPath() + "/ViewJobDetails.jsp");
+				response.sendRedirect(request.getContextPath() + "/company/ViewJobDetails.jsp");
 			}
 			else{
-				response.sendRedirect(request.getContextPath() + "/index.jsp");
+				response.sendRedirect(request.getContextPath() + "/company/index.jsp");
 			}
 		}
 	}
@@ -80,7 +80,7 @@ public class JobServlet extends HttpServlet {
 			if(createJob == 1){
 //				RequestDispatcher rd = request.getRequestDispatcher("/CompanyHomePage.jsp");
 //				rd.forward(request, response);
-				response.sendRedirect(request.getContextPath() + "/CompanyHomePage.jsp");
+				response.sendRedirect(request.getContextPath() + "/company/CompanyHomePage.jsp");
 			}
 			else{
 //				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
@@ -104,11 +104,11 @@ public class JobServlet extends HttpServlet {
 			if(editJob == 1){
 //				RequestDispatcher rd = request.getRequestDispatcher(request.getContextPath() + "/ViewJobDetails.jsp");
 //				rd.forward(request, response);
-				response.sendRedirect(request.getContextPath() + "/ViewJobDetails.jsp");
+				response.sendRedirect(request.getContextPath() + "/company/ViewJobDetails.jsp");
 			}else{
 //				RequestDispatcher rd = request.getRequestDispatcher(request.getContextPath() + "/CompanyHomePage.jsp");
 //				rd.forward(request, response);
-				response.sendRedirect(request.getContextPath() + "/CompanyHomePage.jsp");
+				response.sendRedirect(request.getContextPath() + "/company/CompanyHomePage.jsp");
 			}
 		}
 	}

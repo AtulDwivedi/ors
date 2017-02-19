@@ -46,7 +46,7 @@ a:active {
 -->
 </style>
     </head>
-<% 
+<%-- <% 
 	String c1=(String) session.getAttribute("s1");
 	//session.setAttribute("s1", c1);
 	String name=null;
@@ -67,7 +67,7 @@ a:active {
 		out.print("ExceptonFrom: file.CompanyHomePage- "+e);
 	}
 %>
-	 
+	  --%>
     
     <body style="margin:0px" bgcolor="#FFFFFF">
         <table width="100%" border="1" bordercolor="#ECE9D8" bgcolor="#FFFFFF">
@@ -76,7 +76,8 @@ a:active {
           </tr>
           <tr>
             <td valign="top" height="512" bordercolor="#622D13"><jsp:include page="menu-company.jsp"/></td>
-            <td width="961" bordercolor="#622D13" valign="top"><img src="images/campus-training[1].jpg" width="743" height="356"></td>
+            <td width="961" bordercolor="#622D13" valign="top">
+            <img src="<%=request.getContextPath()+"/images/campus-training[1].jpg"%>" width="743" height="356"></td>
           </tr>
     </table>
     </body>

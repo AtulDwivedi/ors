@@ -78,7 +78,7 @@ Statement st = con.createStatement();
             cutoff = rs.getDouble(5);
         }
                     %>
-                    <form name="frm" action="ExamServlet/edit" method="post" onsubmit="return check()">
+                    <form name="frm" action="<%=request.getContextPath()+"/ExamServlet/edit" %>" method="post" onsubmit="return check()">
                         <table width="449" border="1" align="center">
                             <tr>
                                 <td colspan="2"><div align="center"><strong>Edit Exam Details</strong></div></td>

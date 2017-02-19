@@ -52,7 +52,7 @@ public class ExamServlet extends HttpServlet {
 			List<Long> jobIds = companyService.getJobIdsOfExamsForCompany((String)session.getAttribute("s1"));
 			request.setAttribute("jobIds", jobIds);
 			
-			request.getRequestDispatcher("../ExamCreation.jsp").forward(request, response);
+			request.getRequestDispatcher("../company/ExamCreation.jsp").forward(request, response);
 		}
 		else if(requestUri.contains("view")){
 			CompanyService companyService = new CompanyServiceImpl();
@@ -60,7 +60,7 @@ public class ExamServlet extends HttpServlet {
 			request.setAttribute("jobIds", jobIds);
 			List<Exam> exams = companyService.getExamsByJobIdAndCompanyId(0, (String)session.getAttribute("s1"));
 			request.setAttribute("exams", exams);
-			request.getRequestDispatcher("../ExamView.jsp").forward(request, response);
+			request.getRequestDispatcher("../company/ExamView.jsp").forward(request, response);
 		}
 		else if(requestUri.contains("delete")){
 			CompanyService companyService = new CompanyServiceImpl();
@@ -69,12 +69,12 @@ public class ExamServlet extends HttpServlet {
 			request.setAttribute("jobIds", jobIds);
 			List<Exam> exams = companyService.getExamsByJobIdAndCompanyId(0, (String)session.getAttribute("s1"));
 			request.setAttribute("exams", exams);
-			request.getRequestDispatcher("../ExamView.jsp").forward(request, response);
+			request.getRequestDispatcher("../company/ExamView.jsp").forward(request, response);
 		}
 		else if(requestUri.contains("show-edit")){
 			String jobId = request.getParameter("jobId");
 			String examId = request.getParameter("examId");
-			response.sendRedirect(request.getContextPath() + "/EditExam.jsp?jobId="+jobId+"&examId="+examId);
+			response.sendRedirect(request.getContextPath() + "/company/EditExam.jsp?jobId="+jobId+"&examId="+examId);
 		}
 	}
 
@@ -141,7 +141,7 @@ public class ExamServlet extends HttpServlet {
 			request.setAttribute("jobIds", jobIds);
 			List<Exam> exams = companyService.getExamsByJobIdAndCompanyId(0, (String)session.getAttribute("s1"));
 			request.setAttribute("exams", exams);
-			request.getRequestDispatcher("../ExamView.jsp").forward(request, response);
+			request.getRequestDispatcher("../company/ExamView.jsp").forward(request, response);
 		}
 	}
 

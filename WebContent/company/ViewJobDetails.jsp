@@ -82,8 +82,8 @@
         <td bordercolor="#20450A" align="center" bgcolor="#E9DDD6"><span class="style6">
           <% out.println(rs.getString(6));%>
         </span></td>
-         <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="EditJob.jsp?jid=<% out.println(rs.getString(1));%>"><strong>Edit</strong></a></div></td>
-                <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="JobServlet/delete?jobId=<% out.println(rs.getString(1));%>"><strong>Delete</strong></a></div></td>
+         <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="<%=request.getContextPath()+"/company/EditJob.jsp?jid="+rs.getString(1)%>"><strong>Edit</strong></a></div></td>
+                <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="<%=request.getContextPath()+"/JobServlet/delete?jobId="+rs.getString(1)%>"><strong>Delete</strong></a></div></td>
       </tr>
       <%
 	  }
