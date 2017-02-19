@@ -1,8 +1,11 @@
 package com.atuldwivedi.ors.service.impl;
 
+import java.util.List;
+
 import com.atuldwivedi.ors.dao.impl.CompanyDaoImpl;
 import com.atuldwivedi.ors.dao.service.CompanyDao;
 import com.atuldwivedi.ors.model.Company;
+import com.atuldwivedi.ors.model.Exam;
 import com.atuldwivedi.ors.model.Job;
 import com.atuldwivedi.ors.service.services.CompanyService;
 
@@ -36,5 +39,35 @@ public class CompanyServiceImpl implements CompanyService {
 	public int updateJobById(Job job) {
 		CompanyDao companyDao = new CompanyDaoImpl();
 		return companyDao.updateJobById(job);
+	}
+
+	@Override
+	public List<Exam> getExamsByJobIdAndCompanyId(long jobId, String comapanyId) {
+		CompanyDao companyDao = new CompanyDaoImpl();
+		return companyDao.getExamsByJobIdAndCompanyId(jobId, comapanyId);
+	}
+
+	@Override
+	public int deleteExamByExamIdAdnCompanyId(Long examId, String companyId) {
+		CompanyDao companyDao = new CompanyDaoImpl();
+		return companyDao.deleteExamByExamIdAdnCompanyId(examId, companyId);
+	}
+
+	@Override
+	public int editExam(Exam exam) {
+		CompanyDao companyDao = new CompanyDaoImpl();
+		return companyDao.editExam(exam);
+	}
+
+	@Override
+	public int addExam(Exam exam) {
+		CompanyDao companyDao = new CompanyDaoImpl();
+		return companyDao.addExam(exam);
+	}
+
+	@Override
+	public List<Long> getJobIdsOfExamsForCompany(String comapanyId) {
+		CompanyDao companyDao = new CompanyDaoImpl();
+		return companyDao.getJobIdsOfExamsForCompany(comapanyId);
 	}
 }

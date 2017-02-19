@@ -1,4 +1,4 @@
-<%@page import="conn.*,java.sql.*" session="true" %>
+<%@page import="conn.*,java.sql.*, java.util.*, com.atuldwivedi.ors.model.*" session="true" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -81,72 +81,24 @@
                                     <p class="style7 style14"> Exam Creation </p>
                             </div></td>
                         </tr>
-                        <tr>
                        
-                        
-                        
-<%
-	String name=(String) session.getAttribute("name");
-	try{
-		Connection con=ConnectionProvider.getCon();
-		Statement stmt=con.createStatement();
-		ResultSet rs=stmt.executeQuery("SELECT JOB_ID FROM JOBDETAIL WHERE NAME='"+name+"'");
-		
-%> 
-                        
-                        <form name="form2" action="ExamCreation.jsp">
-                            <td width="139" height="42" align="center"><span class="style19">Select a JobID </span></td>
-                            <td width="127" align="center">
-                                <label>
-                                    <select name="jobid">
-                                     <option value="select">...Select...</option>
-                                 <%   while(rs.next()){
-			String jid=rs.getString(1);
-                                       %>
-                                        <option value="<%=jid%>"><%=jid%></option>
-                                       <% 
-	}
-	}
-	catch(Exception e){System.out.print("ExceptionFrom: file.ExamCreation- "+e);} %>
-
-                                    </select>
-                                </label>                            </td>
-<td width="128" align="center"> <div align="center" width="163">
-                              <input type="submit" value="Show Details">
-                            </div></td></form>
-                       
-<%	
-	String post = null;
-     String jobid = request.getParameter("jobid");
-	 String name1=(String) session.getAttribute("name");
-	 try{
-	 	Connection con1=ConnectionProvider.getCon();
-	 Statement stmt1=con1.createStatement();
-   ResultSet rs1 = stmt1.executeQuery("select * from JobDetail where Job_Id='"+jobid+"' AND NAME='"+name1+"'");
-     while (rs1.next()) {
-           post= rs1.getString(2);} 
-					HttpSession jidd=request.getSession();
-            		HttpSession postt=request.getSession();
-					jidd.setAttribute("jobid", jobid);
-            		postt.setAttribute("post", post);
-					System.out.println(jobid);
-					System.out.println(post);
-               		 
-            
-
-%>
-                        <tr>
-                            <td align="center"><span class="style19">Post Name :</span></td>
-                            <td align="center"><%=post%></td>
-                      </tr> 
-<% 
-	
-	}
-	catch(Exception e){System.out.print("ExceptionFrom: file.ExamCreation- "+e);} %>
+           
                     </table>
                   <p>&nbsp;</p>
-                    <form name="form1" method="post" action="SaveExamDetails.jsp" onSubmit="return check()">
+                    <form name="form1" method="post" action="ExamServlet/add" onSubmit="return check()">
                         <table width="318" height="166" border="1" align="center">
+                            <tr>
+                                <td width="138" height="40" bordercolor="#666666" bgcolor="#B0CDD7"><div align="center" class="style4 style20"><strong>Select a JobID</strong></div></td>
+                                <td width="164" bordercolor="#666666" bgcolor="#B0CDD7"><select name="jobId">
+                                     <option value="select">...Select...</option>
+                                <% List<Long> jobIds = (List<Long>)request.getAttribute("jobIds"); 
+                                for(int i=0; i<jobIds.size(); i++){
+                                	%><option value="<%=jobIds.get(i)+"" %>"><%=jobIds.get(i)%></option><%
+                                }
+                                %>
+                                    </select></td>
+                            </tr>
+                         
                             <tr>
                                 <td width="138" height="40" bordercolor="#666666" bgcolor="#B0CDD7"><div align="center" class="style4 style20"><strong>Exam ID</strong></div></td>
                                 <td width="164" bordercolor="#666666" bgcolor="#B0CDD7"><input type="text" name="eid"></td>

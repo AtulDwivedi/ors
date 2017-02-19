@@ -1,37 +1,10 @@
 <%-- 
     Document   : ExamView
-    Created on : Nov 18, 2008, 2:27:28 PM
-    Author     : Srishti
+    Created on : Nov 18, 2012, 2:27:28 PM
+    Author     : Atul Dwivedi
 --%>
-<%@page import="java.io.*,conn.*,java.sql.*;"%>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.ConnectionProvider;"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"  %>
-<%
-
-
-        String jid = request.getParameter("jid");
-        String eid = request.getParameter("eid");
-        String msg = "";
-        if (request.getParameter("update") != null) {
-            String examid = request.getParameter("examid");
-            String jobid = request.getParameter("jobid");
-            String postname = request.getParameter("postname");
-            String examname = request.getParameter("exname");
-            String cutoff = request.getParameter("cutoff");
-            String sql = "Update Exam Set Post='" + postname + "', Exam_Name='" + examname + "', Cutoff='" +
-                    cutoff + "' where Job_ID='" + jobid + "' and Exam_ID='" + examid + "'";
-             Connection con=ConnectionProvider.getCon();
-            Statement st = con.createStatement();
-            int x = st.executeUpdate(sql);
-
-            if (x > 0) {
-                msg = "success";
-                response.sendRedirect("ExamView.jsp?jobid=" + jobid);
-
-            } else {
-                msg = "Updation failed";
-            }
-        }
-%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -92,45 +65,44 @@
                 <td width="1" height="537"><jsp:include page="Companymenu.html"/></td>
                 <td width="961" bgcolor="#EDE0E2" valign="top">
                     <%
-
-
-        Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-        Connection con = DriverManager.getConnection("jdbc:odbc:OnlineExam");
-        Statement st = con.createStatement();
-        Statement st3 = con.createStatement();
-        ResultSet rs = st.executeQuery("select * from Exam where JobID='" + jid + "' and ExamID='" + eid + "'");
-        String post = "", exname = "", cutoff = "";
+                    String jid = request.getParameter("jobId");
+                    String eid = request.getParameter("examId");
+					Connection con = ConnectionProvider.getConnection();
+Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("select * from Exam where Job_ID=" + Long.parseLong(jid) + " and Exam_ID=" + Long.parseLong(eid));
+        String post = "", exname = "";
+        double cutoff = 0;
         if (rs.next()) {
-            post = rs.getString("Post");
-            exname = rs.getString("ExamName");
-            cutoff = rs.getString("Cutoff");
+            post = rs.getString(2);
+            exname = rs.getString(4);
+            cutoff = rs.getDouble(5);
         }
                     %>
-                    <form name="frm" action="EditExam.jsp" method="post" onsubmit="return check()">
+                    <form name="frm" action="edit" method="post" onsubmit="return check()">
                         <table width="449" border="1" align="center">
                             <tr>
                                 <td colspan="2"><div align="center"><strong>Edit Exam Details</strong></div></td>
                             </tr>
                             <tr>
                                 <td>Post</td>
-                                <td><input type="text" name="postname" id="postname" value="<%=post%>"></td>
+                                <td><input type="text" name="post" id="postname" value="<%=post%>"></td>
                             </tr>
                             <tr>
                                 <td>Exam Name</td>
-                                <td><input type="text" name="exname" id="exname" value="<%=exname%>"></td>
+                                <td><input type="text" name="examName" id="exname" value="<%=exname%>"></td>
                             </tr>
                             <tr>
                                 <td>Cutoff</td>
-                                <td><input type="text" name="cutoff" id="cutoff" value="<%=cutoff%>"></td>
+                                <td><input type="text" name="cutOff" id="cutoff" value="<%=cutoff%>"></td>
                             </tr>
                             <tr>
                                 <td colspan="2" align="center">
-                                    <input name="jobid" type="hidden" id="jobid" value="<%=jid%>">
-                                    <input name="examid" type="hidden" id="examid" value="<%=eid%>">
+                                    <input name="jobid" type="hidden" id="jobId" value="<%=jid%>">
+                                    <input name="examid" type="hidden" id="examId" value="<%=eid%>">
                                 <input type="submit" name="update" id="update" value="Update" ></td>
                             </tr>
                             <tr>
-                                <td colspan="2" align="center"><%=msg%></td>
+                               <%--  <td colspan="2" align="center"><%=msg%></td> --%>
                             </tr>
                         </table>
                     </form>

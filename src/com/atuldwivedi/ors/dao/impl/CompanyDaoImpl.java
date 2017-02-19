@@ -2,11 +2,16 @@ package com.atuldwivedi.ors.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.atuldwivedi.ors.dao.service.CompanyDao;
 import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import com.atuldwivedi.ors.model.Company;
+import com.atuldwivedi.ors.model.Exam;
 import com.atuldwivedi.ors.model.Job;
 
 public class CompanyDaoImpl implements CompanyDao {
@@ -134,5 +139,95 @@ public class CompanyDaoImpl implements CompanyDao {
 	}
 	return updatedRecordCount;
 }
+
+	@Override
+	public List<Exam> getExamsByJobIdAndCompanyId(long jobId, String comapanyId) {
+		List<Exam> exams = new ArrayList<Exam>();
+		try {
+			Connection con = ConnectionProvider.getConnection();
+			Statement	stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM EXAM WHERE COMP_NAME ='"+ comapanyId +"'");
+			
+			while(rs.next()){
+				Exam exam = new Exam(rs.getLong(1), rs.getString(2), rs.getLong(3), rs.getString(4), rs.getDouble(5), comapanyId);
+				exams.add(exam);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return exams;
+	}
+
+	@Override
+	public int deleteExamByExamIdAdnCompanyId(Long examId, String companyId) {
+		int deletedRecords = 0;
+		try{
+			System.out.println("Deleting exams");
+			Connection con = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = con.prepareStatement("DELETE FROM EXAM WHERE EXAM_ID=? AND COMP_NAME=?");
+			pstmt.setLong(1, examId);
+			pstmt.setString(2, companyId);
+			deletedRecords = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return deletedRecords;
+	}
+
+	@Override
+	public int editExam(Exam exam) {
+		int editExam = 0;
+		String updateExamQuery = "UPDATE EXAM SET EXAM_NAME=?, CUOFF=? WHERE COMP_NAME=? AND JOB_ID=? AND EXAM_ID=?";
+		try(Connection con = ConnectionProvider.getConnection(); PreparedStatement pstmt = con.prepareStatement(updateExamQuery)){
+			pstmt.setString(1, exam.getExamName());
+			pstmt.setDouble(2, exam.getCutOff());
+			pstmt.setString(3, exam.getCompanyId());
+			pstmt.setLong(4, exam.getJobId());
+			pstmt.setLong(5, exam.getExamId());
+			editExam = pstmt.executeUpdate();
+			System.out.println("Edit Exam: "+editExam);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return editExam;
+	}
+
+	@Override
+	public int addExam(Exam exam) {
+		int addedExam = 0;
+		try{
+			Connection con = ConnectionProvider.getConnection();
+			PreparedStatement pstmt = con.prepareStatement("INSERT INTO EXAM VALUES(?,?,?,?,?,?)");
+			pstmt.setLong(3, exam.getExamId());
+			pstmt.setString(4, exam.getExamName());
+			pstmt.setDouble(5, exam.getCutOff());
+			pstmt.setLong(1, exam.getJobId());
+			pstmt.setString(2, exam.getPost());
+			pstmt.setString(6, exam.getCompanyId());
+			addedExam = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return addedExam;
+	}
+
+	@Override
+	public List<Long> getJobIdsOfExamsForCompany(String comapanyId) {
+		List<Long> jobIds = new ArrayList<Long>();
+		try {
+			Connection con = ConnectionProvider.getConnection();
+			Statement	stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT DISTINCT(JOB_ID) FROM EXAM WHERE COMP_NAME ='"+ comapanyId +"'");
+			
+			while(rs.next()){
+				jobIds.add((Long)rs.getLong(1));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return jobIds;
+	}
 
 }
