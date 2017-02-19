@@ -35,7 +35,7 @@
                 <td height="29" colspan="2"><jsp:include page="CompanyHeader.jsp"/></td>
           </tr>
               <tr>
-                <td  height="512" bordercolor="#CC9999"><jsp:include page="Companymenu.html"/></td>
+                <td  height="512" bordercolor="#CC9999"><jsp:include page="menu-company.jsp"/></td>
                    <td width="99%" bordercolor="#CC9999" valign="top">
                        <form name="form1" action="View.jsp">
                          <table  width="33%" height="118" border="0" align="left">

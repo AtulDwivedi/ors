@@ -27,7 +27,7 @@
             <td height="107" colspan="2"><jsp:include page="CompanyHeader.jsp"/></td>
           </tr>
           <tr>
-            <td width="1" height="512"><jsp:include page="Companymenu.html"/></td>
+            <td width="1" height="512"><jsp:include page="menu-company.jsp"/></td>
             <td width="961">
 	<table width="291" height="89" border="1" align="center">
           <tr>

@@ -75,7 +75,7 @@ a:active {
             <td height="107" colspan="2" bordercolor="#622D13"><jsp:include page="CompanyHeader.jsp"/></td>
           </tr>
           <tr>
-            <td valign="top" height="512" bordercolor="#622D13"><jsp:include page="Companymenu.html"/></td>
+            <td valign="top" height="512" bordercolor="#622D13"><jsp:include page="menu-company.jsp"/></td>
             <td width="961" bordercolor="#622D13" valign="top"><img src="images/campus-training[1].jpg" width="743" height="356"></td>
           </tr>
     </table>

@@ -62,7 +62,7 @@
                 <td height="23" colspan="2"><jsp:include page="CompanyHeader.jsp"/></td>
             </tr>
             <tr>
-                <td width="1" height="537"><jsp:include page="Companymenu.html"/></td>
+                <td width="1" height="537"><jsp:include page="menu-company.jsp"/></td>
                 <td width="961" bgcolor="#EDE0E2" valign="top">
                     <%
                     String jid = request.getParameter("jobId");

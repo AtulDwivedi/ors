@@ -33,7 +33,7 @@
                 <td height="85" colspan="2"><jsp:include page="CompanyHeader.jsp"/></td>
             </tr>
             <tr>
-                <td width="1" height="512" valign="top"><jsp:include page="Companymenu.html"/></td>
+                <td width="1" height="512" valign="top"><jsp:include page="menu-company.jsp"/></td>
                 <td width="961" valign="top">
 
                     <form name="form1" action="ViewQues.jsp">

@@ -27,7 +27,7 @@
             <td height="107" colspan="2"><jsp:include page="CompanyHeader.jsp"/></td>
           </tr>
           <tr>
-            <td width="121" height="512"><jsp:include page="Companymenu.html"/></td>
+            <td width="121" height="512"><jsp:include page="menu-company.jsp"/></td>
             <td width="961" bordercolor="#663366" bgcolor="#CC9999" valign="top"><table width="100%" height="50%" border="1" align="right" bordercolor="#996666" bgcolor="#999933">
               <tr >
                 <td height="100%"  colspan="8" bordercolor="#516415" bgcolor="#CAA899" ><div align="center"><span class="style1">Job Details</span></div></td>
