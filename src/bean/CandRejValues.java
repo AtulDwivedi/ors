@@ -181,7 +181,7 @@ public class CandRejValues{
 				ps.setString(15,pincode);
 				ps.setString(16,category);
 				
-				ps.executeQuery();
+				ps.executeUpdate();
 				flag=true;
 				System.out.println("values are inserted....!   :-)");
 				/*if(i>0){

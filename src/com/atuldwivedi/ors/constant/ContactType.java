@@ -2,7 +2,7 @@ package com.atuldwivedi.ors.constant;
 
 public enum ContactType {
 
-	HOME("Home"), WORK("Work"), COMPANY("Company"), COLLEGE("College");
+	HOME("Home"), WORK("Work"), COMPANY("Company"), COLLEGE("College"), PERSONAL("Personal");
 
 	private String value;
 

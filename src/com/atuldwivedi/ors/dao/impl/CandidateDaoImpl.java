@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import com.atuldwivedi.ors.dao.service.CandidateDao;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import com.atuldwivedi.ors.model.Candidate;
 
 public class CandidateDaoImpl implements CandidateDao {
@@ -20,34 +21,37 @@ public class CandidateDaoImpl implements CandidateDao {
 	public int insertCandidate(Candidate candidate) {
 		int retVal = 0;
 		
-		try(PreparedStatement ps = con.prepareStatement("INSERT INTO studentregister VALUES()");){
-			ps.setString(1, candidate.getUserName());
-			ps.setString(2, candidate.getName());
-			ps.setString(3, candidate.getGender());
-			ps.setDate(4, (Date)new SimpleDateFormat("dd/MM/yyyy").parse(candidate.getDob()));
-			ps.setString(5, candidate.getCollName());
-			ps.setInt(6, Integer.parseInt(candidate.getTelephone()));
-			ps.setString(7, candidate.getEmailId());
-			ps.setString(8, candidate.getBranch());
-			ps.setString(9, candidate.getMarks());
-			ps.setString(10, candidate.getDegree());
-			ps.setString(11, candidate.getAddress());
-			ps.setString(12, candidate.getState());
-			ps.setString(12, candidate.getPinCode());
-			ps.setString(14, candidate.getCategory());
-			
+		String insertCandidate = "INSERT INTO CANDIDATE VALUES(?,?,?,?,?,?)";
+		String insertAddress = "";
+		String insertContact = "INSERT INTO CONTACT VALUES(?,?,?,?,?)";
+		String insertEducation = "";
+		String insertExperience = "";
 		
+		try {
+			Connection con =ConnectionProvider.getConnection();
+			PreparedStatement psCand = con.prepareStatement(insertCandidate);
+			PreparedStatement psContact = con.prepareStatement(insertContact);
 			
-
-
-//			addr varchar2(100), 
-//			states varchar2(20),
-//			pincode number(6), 
-//			category varchar2(20))
-
-		} catch (SQLException | ParseException e) {
+			psCand.setString(1, candidate.getUserName());
+			psCand.setString(2, candidate.getName());
+			psCand.setString(3, candidate.getGender());
+			psCand.setString(4, candidate.getDob());
+			psCand.setString(5, candidate.getUserType());
+			psCand.setBoolean(6, candidate.isExperienced());
+			
+			psCand.executeUpdate();
+			
+			psContact.setString(1, candidate.getUserName());
+			psContact.setString(2, candidate.getContact().getEmailId());
+			psContact.setLong(3, candidate.getContact().getMobileNumber());
+			psContact.setLong(4, candidate.getContact().getLandLineNumber());
+			psContact.setString(5, candidate.getContact().getContactType());
+			retVal = psContact.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return retVal;
 	}
 

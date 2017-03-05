@@ -2,7 +2,7 @@ package com.atuldwivedi.ors.constant;
 
 public enum AddressType {
 
-	HOME("Home"), WORK("Work"), COMPANY("Company"), COLLEGE("College");
+	HOME("Home"), WORK("Work"), COMPANY("Company"), COLLEGE("College"), CURRENT("Current"), PERMANENT("Permanent");
 
 	private String value;
 

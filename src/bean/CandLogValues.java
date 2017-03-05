@@ -42,7 +42,7 @@ public class CandLogValues{
 				ps.setString(2,password);
 				ps.setString(3,status);
 				
-				ps.executeQuery();
+				ps.executeUpdate();
 				flag=true;
 				System.out.println("values are inserted....!   :-)");
 				
