@@ -514,7 +514,7 @@
                             <tr bgcolor="#E9E9D8">
                                 <td bgcolor="#FEF7E9"><span class="style5"></span></td>
                                 <td><font face="Arial, helvetica" color="#000000" size="-1" >Category</font></td>
-                                <td><select name="sel_cat" id="sel_cat" onchange="setVal(this.value)">
+                                <td><select name="isExperienced" id="sel_cat" onchange="setVal(this.value)">
                                         <option value="category">select a category</option>
                                         <option value="Fresher">Fresher</option>
                                         <option value="Experienced">Experienced</option>
