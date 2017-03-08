@@ -32,4 +32,12 @@ public class Contact {
 	public void setContactType(String contactType) {
 		this.contactType = contactType;
 	}
+	@Override
+	public String toString() {
+		return "Contact [emailId=" + emailId + ", mobileNumber=" + mobileNumber
+				+ ", landLineNumber=" + landLineNumber + ", contactType="
+				+ contactType + "]";
+	}
+	
+	
 }

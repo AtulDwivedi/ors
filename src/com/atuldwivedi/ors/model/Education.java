@@ -58,4 +58,14 @@ public class Education {
 	public void setCollegeContact(Contact collegeContact) {
 		this.collegeContact = collegeContact;
 	}
+	@Override
+	public String toString() {
+		return "Education [collegeName=" + collegeName + ", branch=" + branch
+				+ ", educationLevel=" + educationLevel + ", marks=" + marks
+				+ ", startYear=" + startYear + ", endYear=" + endYear
+				+ ", collegeAddress=" + collegeAddress + ", collegeContact="
+				+ collegeContact + "]";
+	}
+	
+	
 }

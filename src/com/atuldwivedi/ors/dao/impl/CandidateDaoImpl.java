@@ -21,7 +21,7 @@ public class CandidateDaoImpl implements CandidateDao {
 	public int insertCandidate(Candidate candidate) {
 		int retVal = 0;
 		
-		String insertCandidate = "INSERT INTO CANDIDATE VALUES(?,?,?,?,?,?)";
+		String insertCandidate = "INSERT INTO CANDIDATE VALUES(?,?,?,?,?)";
 		String insertAddress = "";
 		String insertContact = "INSERT INTO CONTACT VALUES(?,?,?,?,?)";
 		String insertEducation = "";
@@ -31,12 +31,11 @@ public class CandidateDaoImpl implements CandidateDao {
 			Connection con =ConnectionProvider.getConnection();
 			PreparedStatement psCand = con.prepareStatement(insertCandidate);
 			PreparedStatement psContact = con.prepareStatement(insertContact);
-			
+						
 			psCand.setString(1, candidate.getUserName());
 			psCand.setString(2, candidate.getName());
 			psCand.setString(3, candidate.getGender());
 			psCand.setString(4, candidate.getDob());
-			psCand.setString(5, candidate.getUserType());
 			psCand.setBoolean(6, candidate.isExperienced());
 			
 			psCand.executeUpdate();

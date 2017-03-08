@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+.div-main{
+float: left;
+margin-top:5px;
+margin-bottom:5px;
+border:2px;
+background-color: #E9E9D8;
+}
+.div1{
+float: left;
+width: 100%;
+}
+.div1-1{
+float: left; 
+width: 28%;
+padding: 1%;
+}
+.div1-2{
+float: right; 
+width: 68%;
+padding: 1%;
+}

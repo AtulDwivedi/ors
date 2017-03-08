@@ -60,6 +60,14 @@ public class Address {
 	public void setAddressType(String addressType) {
 		this.addressType = addressType;
 	}
+	@Override
+	public String toString() {
+		return "Address [addressLine1=" + addressLine1 + ", addressLine2="
+				+ addressLine2 + ", city=" + city + ", state=" + state
+				+ ", country=" + country + ", pinCode=" + pinCode
+				+ ", landMark=" + landMark + ", addressType=" + addressType
+				+ "]";
+	}
 	
 	
 }

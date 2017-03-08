@@ -5,7 +5,6 @@ public class Candidate {
 	private String name;
 	private String gender;
 	private String dob; 
-	private String userType;
 	private boolean isExperienced;
 	private Address address;
 	private Contact contact;
@@ -38,12 +37,7 @@ public class Candidate {
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	public String getUserType() {
-		return userType;
-	}
-	public void setUserType(String userType) {
-		this.userType = userType;
-	}
+	
 	public boolean isExperienced() {
 		return isExperienced;
 	}
@@ -74,14 +68,13 @@ public class Candidate {
 	public void setExperience(Experience experience) {
 		this.experience = experience;
 	}
+	
 	@Override
 	public String toString() {
-		return "Candidate [userName=" + userName + ", name=" + name + ", gender="
-				+ gender + ", dob=" + dob + ", userType=" + userType
-				+ ", isExperienced=" + isExperienced + ", address=" + address
-				+ ", contact=" + contact + ", education=" + education
-				+ ", experience=" + experience + "]";
-	}
-	
-	
+		return "Candidate [userName=" + userName + ", name=" + name
+				+ ", gender=" + gender + ", dob=" + dob + ", isExperienced="
+				+ isExperienced + ", address=" + address + ", contact="
+				+ contact + ", education=" + education + ", experience="
+				+ experience + "]";
+	}	
 }
