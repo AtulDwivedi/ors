@@ -39,11 +39,11 @@
 	class="com.atuldwivedi.ors.dao.impl.LoginDaoImpl" />
 <%
 out.println(candidate);
-	/* if (loginDao.insertLogin(login) > 0) {
+	 if (loginDao.insertLogin(login) > 0) {
 		out.println("Login details inserted successfully!");
 		if (dao.insertCandidate(candidate) > 0) {
 			out.println("Candidate registered successfully!");
 		}
-	} */
+	} 
 	
 %>

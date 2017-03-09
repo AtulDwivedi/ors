@@ -52,7 +52,7 @@
 				<label>Is present company</label>
 			</div>
 			<div class="div1-2">
-				<input type="radio" name="isPresentCompany" value="true" onclick="hideExperienceFieldsStartAndEndYear()" />Yes &nbsp; <input type="radio" name="isPresentCompany" value="true"  onclick="showExperienceFieldsStartAndEndYear()" />No
+				<input type="radio" name="presentCompany" value="true" onclick="hideExperienceFieldsStartAndEndYear()" />Yes &nbsp; <input type="radio" name="presentCompany" value="true"  onclick="showExperienceFieldsStartAndEndYear()" />No
 			</div>
 		</div>
 		

@@ -61,7 +61,7 @@
 				<label>Experienced</label>
 			</div>
 			<div class="div1-2">
-			<input type="radio" name="isExperienced" value="true" onclick="showExperienceFields()" />Yes &nbsp; <input type="radio" name="isExperienced" value="true" onclick="hideExperienceFields()" />No
+			<input type="radio" name="experienced" value="true" onclick="showExperienceFields()" />Yes &nbsp; <input type="radio" name="experienced" value="false" onclick="hideExperienceFields()" />No
 			</div>
 		</div>
 	</div>
