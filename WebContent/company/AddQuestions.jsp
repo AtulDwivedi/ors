@@ -1,7 +1,7 @@
 <%-- 
     Document   : AddQuestions
-    Created on : Nov 18, 2008, 3:39:18 PM
-    Author     : Srishti
+    Created on : Nov 18, 2012, 3:39:18 PM
+    Author     : Atul Dwivedi
 --%>
 <%@page import="java.io.*,conn.*,java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

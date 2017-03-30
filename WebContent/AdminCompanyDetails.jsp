@@ -1,6 +1,6 @@
 <%-- 
     Document   : AdminCompanyDetails
-    Created on : Nov 15, 2008, 12:50:40 PM
+    Created on : Nov 15, 2012, 12:50:40 PM
     Author     : user
 --%>
 <%@page import="java.io.*,java.sql.*,conn.*;"%>
