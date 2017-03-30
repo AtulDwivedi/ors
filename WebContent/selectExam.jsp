@@ -1,7 +1,7 @@
 <%-- 
     Document   : saveexamdetails
-    Created on : Nov 18, 2008, 2:42:27 PM
-    Author     : Srishti
+    Created on : Nov 18, 2012, 2:42:27 PM
+    Author     : Atul Dwivedi
 --%>
 
 <%@page import="java.io.*,java.sql.*;"session="true"%>
@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
     </head>
     <body>
     <table width="100%" height="369" border="1">

@@ -1,7 +1,7 @@
 <%-- 
     Document   : AdminHomePage
-    Created on : Dec 3, 2008, 11:39:04 AM
-    Author     : Srishti
+    Created on : Dec 3, 2012, 11:39:04 AM
+    Author     : Atul Dwivedi
 --%>
 <%@page import="java.io.*,java.sql.*,conn.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>www.CarrierMithr.com</title>
+<title>Online Recruitment System</title>
 
        <style type="text/css">
 <!--

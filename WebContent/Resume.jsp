@@ -1,6 +1,6 @@
 <%-- 
     Document   : Resume
-    Created on : Nov 15, 2008, 11:22:10 AM
+    Created on : Nov 15, 2012, 11:22:10 AM
     Author     : user
 --%>
 <%@page import="java.io.*,java.sql.*,conn.*"%>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
         <style type="text/css">
             <!--
             .style1 {

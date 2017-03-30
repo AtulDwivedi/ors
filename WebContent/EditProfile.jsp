@@ -1,6 +1,6 @@
 <%-- 
     Document   : EditProfile
-    Created on : Nov 14, 2008, 11:33:33 AM
+    Created on : Nov 14, 2012, 11:33:33 AM
     Author     : user
 --%>
 <%@page import="java.io.*" session="true"%>
@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
         <script language="javascript">
         function setVal(obj)
          {
