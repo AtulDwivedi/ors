@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
     </head>
 <body bgcolor="#ECE9D8" text="#0033FF" link="#CC6600">
      <% try {
