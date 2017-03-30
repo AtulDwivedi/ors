@@ -86,16 +86,6 @@
 					placeholder="Land Mark" />
 			</div>
 		</div>
-
-		<div class="div1">
-			<div class="div1-1">
-
-				<input type="reset" />
-			</div>
-			<div class="div1-2">
-				<input type="submit" value="submit" />
-			</div>
-		</div>
 	</div>
 
 </body>

@@ -2,9 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script type="text/javascript"
-	src="resources/js/validate-candidate-registration-form.js">
-	
-</script>
+	src="<%=request.getContextPath()+"/resources/js/validate-candidate-registration-form.js"%>"></script>
 <script language="javascript">
             function hideExperienceFields()
             {
@@ -43,7 +41,7 @@
 					<%@ include file="common/address.jsp"%>
 					<%@ include file="candidate/candidate-education-form-fileds.jsp"%>
 					<%@ include file="candidate/candidate-experience-form-fileds.jsp"%>
-					
+					<%@ include file="common/form-buttons.jsp"%>
 				</form>
 			</div>
 			<div style="float: left; width: 20%;"><jsp:include page="menu.jsp" /></div>
