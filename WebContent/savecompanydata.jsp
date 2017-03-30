@@ -1,6 +1,6 @@
 <%-- 
     Document   : savecompanydata
-    Created on : Nov 14, 2008, 10:39:55 AM
+    Created on : Nov 14, 2012, 10:39:55 AM
     Author     : user
 --%>
 <%@page import="java.io.*,java.sql.*;"%>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
     </head>
     <body bgcolor="#E2C2CB">
         <% try

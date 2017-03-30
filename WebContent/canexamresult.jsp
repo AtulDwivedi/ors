@@ -1,6 +1,6 @@
 <%-- 
     Document   : JobseekerHomePage
-    Created on : Nov 11, 2008, 12:45:18 PM
+    Created on : Nov 11, 2012, 12:45:18 PM
     Author     : user
 --%>
 <%@page import="java.io.*" %>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
     </head>
     <body>
         <table width="104%" height="628" border="1">

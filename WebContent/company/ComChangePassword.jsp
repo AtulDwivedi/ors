@@ -1,6 +1,6 @@
 <%-- 
     Document   : ComChangePassword
-    Created on : Dec 19, 2011, 9:41:16 PM
+    Created on : Dec 19, 2012, 9:41:16 PM
     Author     : User
 --%>
 <%@page import="java.io.*,java.sql.*,conn.*" %>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
         <style type="text/css">
             <!--
             .style1 {

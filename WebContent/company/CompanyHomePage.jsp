@@ -1,6 +1,6 @@
 <%-- 
     Document   : CompanyHomePage
-    Created on : Nov 11, 2008, 12:44:55 PM
+    Created on : Nov 11, 2012, 12:44:55 PM
     Author     : user
 --%>
 <%@page import="conn.*,java.sql.*" %>
@@ -15,7 +15,7 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
 		<style type="text/css">
 <!--
 .body {

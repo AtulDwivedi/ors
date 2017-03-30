@@ -1,6 +1,6 @@
 <%-- 
     Document   : savepassword
-    Created on : Nov 14, 2008, 12:36:22 PM
+    Created on : Nov 14, 2012, 12:36:22 PM
     Author     : user
 --%>
 <%@page import="java.io.*,java.sql.*,conn.*;"%>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
     </head>
     <body bgcolor="#FFCCCC">
         <p>

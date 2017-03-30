@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        
-<title>www.CarrierMithr.com</title>
+<title>Online Recruitment System</title>
 <style type="text/css">
 <!--
 .body {
@@ -45,26 +45,22 @@ a:active {
   <tr>
     <td width="10%" height="621" bgcolor="#624631"><jsp:include page="menu.html"/></td>
     <td width="90%" height="20" valign="top" bgcolor="#CC9966">
-      <h1 align="center" class="style63 style11">Carreer Mitra </h1>
-      <h3 align="center" class="style64 style12">Greater Noida </h3>
-      <p align="center" class="style12">Email: carreermithr@yahoo.com</p>
-      <p align="center" class="style12">Mobile No.: +91 9900647487<br> Mobile No.: +91 9369266254</p>
-      <h1 align="center" class="style63 style11">OnLine Recruitment Team</h1>
+      <h1 align="center" class="style63 style11">Online Recruitment System </h1>
+      <h3 align="center" class="style64 style12">Bangalore </h3>
+      <p align="center" class="style12">Email: atul.wnw@gmail.com</p>
+      <p align="center" class="style12">Mobile No.: +91 9741033355<br> Mobile No.: +91 9369266254</p>
+      
+      <h2 align="left" class="style63 style11">Team Members</h2>
+      <div class="style12" id="div" style="width: 100%; float: left;">
+      <div style="width: 15%; float: left; margin: 5px;"><img src="images/atul16.jpg" width="100%" height="200px" /></div>
+      <div style="width: 75%; float: left; margin: 5px;"> 
+      ATUL DWIVEDI,<br>
+      <label style="font: bold;">Mobile: </label>9741033355 &nbsp;&nbsp;<label style="font: bold;">Email: </label>atul.wnw@gmail.com</div>
+      
+      
+      </div>
         
-  
-      <div class="style12" id="div">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/atul16.jpg" width="145" height="162" />
-      <P align="center"> ATUL DWIVEDI,93692266254</P></div>
-        
-        <div class="style12" id="div">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/abhi.jpg" width="145" height="162" />
-      <P align="center"> ABHISHEK KUMAR RAJ,9208556278</P></div>
-      <div class="style12" id="div">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/Rashid.jpg" width="145" height="162" />
-      <P align="center"> RASHID JAMAL,9389411064</P></div>
-        <div class="style12" id="div">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <img src="images/nav.jpg" width="145" height="162" />
-      <P align="center"> NAVANIT KUMAR,9580505048</P></div>
+ 
       
     <td width="90%" height="531" valign="center"><p></p></td></tr>
 </table>

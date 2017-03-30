@@ -1,6 +1,6 @@
 <%-- 
     Document   : Login
-    Created on : Nov 11, 2008, 12:44:19 PM
+    Created on : Nov 11, 2012, 12:44:19 PM
     Author     : user
 --%>
 
@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>www.CarrierMithr.com</title>
+    <title>Online Recruitment System</title>
     <style type="text/css">
         <!--
         .body {
