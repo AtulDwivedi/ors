@@ -1,6 +1,6 @@
 <%-- 
     Document   : savelogindata
-    Created on : Nov 11, 2008, 2:08:03 PM
+    Created on : Nov 11, 2012, 2:08:03 PM
     Author     : user
 --%>
 <%@page import="java.io.*,java.sql.*"%>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
     </head>
     <body>
         <% try {

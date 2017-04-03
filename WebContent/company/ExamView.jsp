@@ -1,7 +1,7 @@
 <%-- 
     Document   : ExamView
-    Created on : Nov 18, 2008, 2:27:28 PM
-    Author     : Srishti
+    Created on : Nov 18, 2012, 2:27:28 PM
+    Author     : Atul Dwivedi
 --%>
 <%@page
 	import="conn.*,java.sql.*, java.util.*, com.atuldwivedi.ors.model.*"%>
@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>www.CarrierMithr.com</title>
+<title>Online Recruitment System</title>
 <style type="text/css">
 <!--
 .style1 {

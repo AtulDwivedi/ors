@@ -1,7 +1,7 @@
 <%-- 
     Document   : AdminHomePage
-    Created on : Dec 3, 2008, 11:39:04 AM
-    Author     : Srishti
+    Created on : Dec 3, 2012, 11:39:04 AM
+    Author     : Atul Dwivedi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
     
        <style type="text/css">
 .body {

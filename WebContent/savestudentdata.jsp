@@ -1,7 +1,7 @@
 <%-- 
     Document   : savestudentdata
-    Created on : Nov 22, 2008, 11:20:05 AM
-    Author     : Srishti
+    Created on : Nov 22, 2012, 11:20:05 AM
+    Author     : Atul Dwivedi
 --%>
 
 
@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>www.CarrierMithr.com</title>
+        <title>Online Recruitment System</title>
     </head>
     <body bgcolor="#D9EEFB">
         <p>
