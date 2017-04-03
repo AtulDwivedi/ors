@@ -163,6 +163,7 @@
             <td width="7" height="354" valign="top" bgcolor="#624631"><jsp:include page="menu.html"/></td>
             <td width="99%" bgcolor="#F2DFE2" valign="top">
                 <div class="Reg" align="center">
+                <!-- from here i have to start changing -->
                     <form action="RegisterCompanyServlet" method="post" name="form1" id="form1" onClick="return valid()">
                         <table width =85% border=0 cellpadding=3 cellspacing=0 bordercolor="#FFFFFF" >
                             <tr bgcolor="" width=100%>
