@@ -14,7 +14,7 @@
 				<label>Name</label>
 			</div>
 			<div class="div1-2">
-				<input type="text" name="name" size="30" maxlength="30" value='' />
+				<input type="text" name="name" size="30" maxlength="30" value='${s1.name }' placeholer="Enter name" />
 			</div>
 		</div>
 

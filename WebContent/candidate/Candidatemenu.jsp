@@ -17,7 +17,7 @@
 <body>
 <table width="151" border="0">
   <tr>
-    <td width="145" height="531" valign="top"><p><img src="images/jobseekersign[1].gif" width="145" height="162" /></p>
+    <td width="145" height="531" valign="top"><p><img src="<%=request.getContextPath()+"/images/jobseekersign[1].gif"%>" width="145" height="162" /></p>
   <p align="left"><strong><span class="style2"><a href="index.jsp">Home</a><br>
           <a href="EditCandProfile.jsp">EditProfile</a><br>
           <a href="ChangeCandPass.jsp">Change Password</a><br>

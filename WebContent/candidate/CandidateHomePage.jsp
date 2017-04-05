@@ -16,7 +16,7 @@
       </tr>
           <tr>
             <td width="10%"  height="597"><jsp:include page="Candidatemenu.jsp"/></td>
-            <td width="75%" valign="top"><img src="images/placements[1].jpg"  width="100%" height="200"></td>
+            <td width="75%" valign="top"><img src="<%=request.getContextPath()+"/images/placements[1].jpg"%>"  width="100%" height="200"></td>
             
       </tr>
         </table>
