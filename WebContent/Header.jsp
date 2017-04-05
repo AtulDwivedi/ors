@@ -33,7 +33,7 @@ a:active {
     <td width="14%" bordercolor="#4E3A34" bgcolor="#4E2B21"><div align="center" class="style5">
       <div align="center"><a href="index.jsp">Home</a></div>
     </div></td>
-     <td width="18%" bordercolor="#4E3A34" bgcolor="#4E2B21"><div align="center" class="style4"><a href="Registration.jsp">New Registration</a></div></td>
+     <td width="18%" bordercolor="#4E3A34" bgcolor="#4E2B21"><div align="center" class="style4"><a href="candidate-registration.jsp">New Registration</a></div></td>
     <td width="22%" bordercolor="#4E3A34" bgcolor="#4E2B21"><div align="center" class="style4"><a href="CompanyReg.jsp">Company Registration</a></div></td>
     <td width="14%" bordercolor="#4E3A34" bgcolor="#4E2B21"><div align="center" class="style4"><a href="AboutUs.jsp">About Us </a></div></td>
     <td width="16%" bordercolor="#4E3A34" bgcolor="#4E2B21"><div align="center" class="style4"><a href="ContactUs.jsp">Contact Us </a></div></td>

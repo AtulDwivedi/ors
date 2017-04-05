@@ -1,6 +1,11 @@
+<%@ page contentType="text/html; charset=utf-8" language="java"
+	import="java.sql.*,conn.*" errorPage=""%>
+<%@ page import="com.atuldwivedi.ors.model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Online Recruitment System</title>
 <script type="text/javascript"
 	src="<%=request.getContextPath()+"/resources/js/validate-candidate-registration-form.js"%>"></script>
 <script language="javascript">
@@ -22,30 +27,30 @@
             		document.getElementById("presentCompany").style.display = 'block';
             	}
             </script>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Online Recruitment System</title>
-	
 </head>
-<body bgcolor="#624631">
 
+<body>
+<body>
+<%
+Candidate cand = (Candidate)session.getAttribute("s1");
+%>
 	<div style="float: left; width: 100%">
-		<div style="float: left; width: 100%"><jsp:include page="Header.jsp" /></div>
+		<div style="float: left; width: 100%"><jsp:include page="CandidateHeader.jsp" /></div>
 		<div style="float: left; width: 100%">
-			<div style="float: left; width: 20%"><jsp:include page="menu.html" /></div>
+			<div style="float: left; width: 20%"><jsp:include page="Candidatemenu.jsp" /></div>
 			<div style="float: left; width: 60%">
 				<form action="candidate/rcd.jsp" method="post" name="form1"
 					id="form1" onsubmit="return check()">
-					<%@ include file="candidate/candidate-info-form-fileds.jsp"%>
-					<%@ include file="common/contact.jsp"%>
-					<%@ include file="common/address.jsp"%>
-					<%@ include file="candidate/candidate-education-form-fileds.jsp"%>
-					<%@ include file="candidate/candidate-experience-form-fileds.jsp"%>
-					<%@ include file="common/form-buttons.jsp"%>
+					<%@ include file="candidate-info-form-fileds.jsp"%>
+					<jsp:include page="${request.contextPath}/common/contact.jsp" />
+					<jsp:include page="${request.contextPath}/common/address.jsp" />
+					<%@ include file="candidate-education-form-fileds.jsp"%>
+					<%@ include file="candidate-experience-form-fileds.jsp"%>
+					<jsp:include page="${request.contextPath}/common/form-buttons.jsp" />
 				</form>
 			</div>
-			<div style="float: left; width: 20%;"><jsp:include page="menu.jsp" /></div>
+			<div style="float: left; width: 20%;"><jsp:include page="Candidatemenu.jsp" /></div>
 		</div>
 	</div>
-</body>
+	</body>
 </html>

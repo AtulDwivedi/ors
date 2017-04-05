@@ -10,8 +10,8 @@
 
 <table width="100%" border="0">
   <tr>
-    <td height="140" bgcolor="#3B6299"><div align="center">
-    <img src="images/dist_banner[1] copy.jpg" width="100%" height="140" /></div></td>
+    <td height="140"><div align="center">
+    <img src="<%=request.getContextPath()+"/images/dist_banner[1] copy.jpg"%>" width="100%" height="140" /></div></td>
   </tr>
 </table>
 </body>
