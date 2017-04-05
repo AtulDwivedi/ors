@@ -78,7 +78,7 @@
                 <td bordercolor="#516415" bgcolor="#CAA899" align="center"><span class="style6"> <%=jvac%> </span></td>
                 <td bordercolor="#516415" bgcolor="#CAA899" align="center"><span class="style6"> <%=jsal%> </span></td>
                 <td bordercolor="#516415" bgcolor="#CAA899" align="center"><span class="style6"> <%=jdate%> </span></td>
-                <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="ExamConduct.jsp?jobid=<%=jobid%>"><strong>Go for Job</strong></a></div></td>
+                <td bordercolor="#516415" bgcolor="#CAA899"><div align="center"> <a href="<%=request.getContextPath()%>/exam/ExamConduct.jsp?jobid=<%=jobid%>"><strong>Go for Job</strong></a></div></td>
                
               </tr>
               <%

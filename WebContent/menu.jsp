@@ -26,7 +26,7 @@ a:active {
 <table width="143" height="208" border="0" bordercolor="#624631" bgcolor="#624631" valign="top">
   <tr>
     <td width="133" height="621" valign="top" bordercolor="#624631" bgcolor="#624631"><p>&nbsp;</p>
-    <p><img src="images\meetu-copy.jpg" width="124" height="137" /></p>
-    <p align="center" class="style1"><a href="Login.jsp">Login</a></p></td>
+    <p><img src="<%=request.getContextPath() %>/images/meetu-copy.jpg" width="124" height="137" /></p>
+    <p align="center" class="style1"><a href="common/Login.jsp">Login</a></p></td>
   </tr>
 </table>

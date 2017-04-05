@@ -40,14 +40,11 @@ public class ContextListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent arg0) {
 		ServletContext contxt=arg0.getServletContext();
 		String createSchema = contxt.getInitParameter("CreateSchema");
-
+		String dbPropPath=contxt.getRealPath("WEB-INF//properties//db.properties");
+		LoadProperty.load(dbPropPath);
 
 		if(createSchema != null && createSchema.equalsIgnoreCase("yes"))
 		{
-			String dbPropPath=contxt.getRealPath("WEB-INF//properties//db.properties");
-			System.out.println(dbPropPath);
-
-			LoadProperty.load(dbPropPath);
 			String getPath=contxt.getRealPath("WEB-INF//tables//h2.sql");
 			SchemaDaoImpl sch = new SchemaDaoImpl();
 			sch.createTables(getPath);

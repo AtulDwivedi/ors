@@ -26,11 +26,9 @@
 </head>
     <body style="margin:0px" bgcolor="#FFFFFF">
         <table width="100%" border="1" bgcolor="#FFFFFF">
+           
             <tr>
-                <td height="107" colspan="2"><jsp:include page="CandidateHeader.jsp"/></td>
-            </tr>
-            <tr>
-                <td width="1" height="512"><jsp:include page="Candidatemenu.jsp"/></td>
+               
                 <td width="961" bgcolor="#CCCC99" valign="top"><table width="967" height="788" border="1">
                   <tr>
                     <td width="957" height="34"><div align="center"><span class="style15">Online Exam </span></div></td>

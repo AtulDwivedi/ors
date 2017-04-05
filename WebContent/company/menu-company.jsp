@@ -36,7 +36,7 @@
         </li>
         <li><a href="<%=request.getContextPath() +"/company/ViewQues.jsp" %>">View</a><br>
         </li>
-        <li><a href="Login.jsp"> LogOut</a></li>
+        <li><a href="<%=request.getContextPath() %>/common/Login.jsp"> LogOut</a></li>
         <br>
       </ul>
     </p></td>

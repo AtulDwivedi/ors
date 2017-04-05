@@ -69,7 +69,7 @@ public class RegisterCompanyServlet extends HttpServlet {
 		if(loginInsertCount == 1){
 			HttpSession session = request.getSession();
 			session.setAttribute("s1", company.getUserName());
-			response.sendRedirect("CompanyHomePage.jsp");
+			response.sendRedirect("company/CompanyHomePage.jsp");
 		}
 		else{
 			response.sendRedirect("index.jsp");

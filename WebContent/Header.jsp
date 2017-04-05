@@ -25,7 +25,7 @@ a:active {
 </style>
 <table width="100%" height="166" border="0" >
   <tr>
-    <td height="138" colspan="6" bordercolor="#44241E" bgcolor="#4E2B21"><div align="center"><img src="images\homepage-images[1].jpg" width="100%" height="150"/></div></td>
+    <td height="138" colspan="6" bordercolor="#44241E" bgcolor="#4E2B21"><div align="center"><img src="<%=request.getContextPath() %>/images/homepage-images[1].jpg" width="100%" height="150"/></div></td>
   </tr>
   <tr>
     

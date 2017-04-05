@@ -45,21 +45,23 @@ public class LoginServlet extends HttpServlet {
 		boolean isValidUser = loginService.checkLogin(login);
 
 		if(isValidUser){
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("s1", userName);
+			
 			String userType = login.getUserType();
+			
 			if(userType.equals("admin")){
 				response.sendRedirect("AdminHomePage.jsp");
 			}
 			else if(userType.equals("comp"))
 			{
-				HttpSession session = request.getSession();
-				session.setAttribute("s1", userName);
-				response.sendRedirect("company/CompanyHomePage.jsp");
+				request.getRequestDispatcher("company/CompanyHomePage.jsp").forward(request, response);
+//				response.sendRedirect("company/CompanyHomePage.jsp");
 			}
 			else if(userType.equals("cand"))
 			{
-				HttpSession session = request.getSession();
-				session.setAttribute("s1", userName);
-				response.sendRedirect("CandidateHomePage.jsp");
+				response.sendRedirect("candidate/CandidateHomePage.jsp");
 			}
 			else
 			{
@@ -67,7 +69,7 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 		else{
-			response.sendRedirect("Login.jsp");
+			response.sendRedirect("common/Login.jsp");
 		}
 	}
 

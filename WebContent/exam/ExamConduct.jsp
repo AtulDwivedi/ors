@@ -1,5 +1,4 @@
-
-<%@page import="java.io.*,conn.*,java.sql.*;"session="true"%>
+<%@page import="java.io.*,conn.*,java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
         
@@ -14,9 +13,6 @@
             System.out.println("Error: " + ex.toString());
         }
 %>
-
-
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -38,11 +34,9 @@
     </head>
     <body style="margin:0px" bgcolor="#FFFFFF">
         <table width="100%" border="1" bgcolor="#FFFFFF">
+            
             <tr>
-                <td height="107" colspan="2"><jsp:include page="CandidateHeader.jsp"/></td>
-            </tr>
-            <tr>
-                <td width="1" height="512"><jsp:include page="Candidatemenu.jsp"/></td>
+               
                 <td width="961" bgcolor="#D8E7E7" valign="top">
                     <table width="304" height="243" border="0" align="center">
                         <tr>
@@ -69,7 +63,7 @@
 							   catch(Exception e){
 							   System.out.print("This Exception from ExamConduct :"+e);}
 
-                        %> <form name="examSelection" action ="ExamConditions.jsp">
+                        %> <form name="examSelection" action ="exam-rules.jsp">
                         	<tr>
                             	<td><span class="style7">JobID :</span></td>
                                 <td align="center"><% out.println(jobid); %></td>

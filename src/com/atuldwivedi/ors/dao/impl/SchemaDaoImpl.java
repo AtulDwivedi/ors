@@ -6,8 +6,8 @@ import java.sql.Statement;
 import java.util.StringTokenizer;
 
 import com.atuldwivedi.ors.dao.service.SchemaDao;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 
-import conn.ConnectionProvider;
 
 public class SchemaDaoImpl implements SchemaDao {
 
@@ -20,8 +20,8 @@ public class SchemaDaoImpl implements SchemaDao {
 
 	@Override
 	public void createTables(String path) {
-		try
-		{
+		try (Connection con = ConnectionProvider.getConnection();
+				Statement stmt = con.createStatement()) {
 			FileInputStream fin=new FileInputStream(path);
 			byte data[]=new byte[fin.available()];
 			fin.read(data);
@@ -31,15 +31,13 @@ public class SchemaDaoImpl implements SchemaDao {
 			while(st.hasMoreTokens())
 			{
 				String query=st.nextToken();
-				Connection con=ConnectionProvider.getCon();
-				Statement stm=con.createStatement();
 					System.out.println("start create table");
 					if(query.trim().equals("stop"))
 					{
 						break;
 					}
 					System.out.println(query);
-					stm.execute(query);
+					stmt.execute(query);
 					System.out.println("table is successfully created");
 					
 			}
@@ -49,7 +47,6 @@ public class SchemaDaoImpl implements SchemaDao {
 		{
 			System.out.println("Table Creator : "+e);
 		}
-
 	}
 
 	@Override

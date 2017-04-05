@@ -26,7 +26,7 @@
           <a href="OnlineJobs.jsp">OnLine Jobs</a><br>
          
           <a href="canexamresult.jsp">Exam Results</a><br>
-        <a href="Login.jsp">LogOut</a></span><br>
+        <a href="<%=request.getContextPath() %>/common/Login.jsp">LogOut</a></span><br>
     </strong></p></td>
   </tr>
 </table>

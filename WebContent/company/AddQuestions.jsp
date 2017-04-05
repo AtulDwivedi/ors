@@ -3,7 +3,7 @@
     Created on : Nov 18, 2012, 3:39:18 PM
     Author     : Atul Dwivedi
 --%>
-<%@page import="java.io.*,conn.*,java.sql.*"%>
+<%@page import="java.io.*,conn.*,java.sql.*" session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -117,7 +117,7 @@
                                 <td height="37" bordercolor="#996633" bgcolor="#EBD8D8"><span class="style4">Job ID </span></td>
                                 <td bordercolor="#996633" bgcolor="#EBD8D8"><label>
                                         <select name="jobid">
-                                            <%      ResultSet rs1 = st1.executeQuery("select * from EXAM where comp_name='"+name+"'");
+                                            <%      ResultSet rs1 = st1.executeQuery("select * from EXAM where comp_name='"+c1+"'");
                                           String s = null;
                                           // String s2=null;
                                           while (rs1.next()) {
@@ -135,7 +135,7 @@
                                 <td width="255" bordercolor="#996633" bgcolor="#EBD8D8">
                                     <label>
                                         <select name="examid">
-                                            <%      ResultSet rs = st.executeQuery("select * from Exam where comp_name='"+name+"'");
+                                            <%      ResultSet rs = st.executeQuery("select * from Exam where comp_name='"+c1+"'");
                                           String s1 = null;
                                           // String s2=null;
                                           while (rs.next()) {

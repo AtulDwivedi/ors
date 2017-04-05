@@ -52,14 +52,14 @@
 <body style="margin:0px">
 <table width="100%" height="492" border="1">
     <tr valign="top">
-        <td height="120" colspan="2" bgcolor="#624631"><jsp:include page="Header.jsp"/></td>
+        <td height="120" colspan="2" bgcolor="#624631"><jsp:include page="${request.contextPath}/Header.jsp"/></td>
     </tr>
-    <td width="1" height="449" valign="top" bgcolor="#624631"><jsp:include page="menu.jsp"/></td>
+    <td width="1" height="449" valign="top" bgcolor="#624631"><jsp:include page="${request.contextPath}/menu.jsp"/></td>
     <td width="759" valign="top" bgcolor="#E8E1C7">
         <div align="right" >
             <p><img src="images\Login.jpg" width="209" height="166"></p>
         </div>
-        <form name="login" method="post" action="LoginServlet">
+        <form name="login" method="post" action="<%=request.getContextPath() %>/LoginServlet">
 
             <div align="right">
                 <table width="219" height="230" border="1" align="right">

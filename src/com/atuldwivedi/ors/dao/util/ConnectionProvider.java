@@ -13,7 +13,7 @@ public class ConnectionProvider {
 		String userName = (String) System.getProperty("userName");
 		String password = (String) System.getProperty("password");
 		
-		if(con == null){
+		if(con == null || con.isClosed()){
 			try {
 				Class.forName(driverClass);
 			} catch (ClassNotFoundException e) {

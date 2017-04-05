@@ -73,7 +73,7 @@
                        <td bordercolor="#344631" bgcolor="#F8E0E0"><div align="center"><%=ename%></div></td>
                        <td bordercolor="#344631" bgcolor="#F8E0E0"><div align="center"><%=ecut%></div></td>
                       <td bordercolor="#344631" bgcolor="#F8E0E0"><div align="center">
-                      <a href="ExamConditions.jsp?examid=<%=examid%>&jobid=<%=jobid%>">Apply now</a></div></td>
+                      <a href="exam-rules.jsp?examid=<%=examid%>&jobid=<%=jobid%>">Apply now</a></div></td>
                       </tr>
                     <% session.setAttribute("jobid", jobid);
                 
