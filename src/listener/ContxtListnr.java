@@ -13,6 +13,7 @@ public class ContxtListnr implements ServletContextListener
 		//String sqltable=contxt.getInitParameter("sqltable");
 		String getpropPath=contxt.getRealPath("WEB-INF//classes//db.properties");
 	LoadProperty.load(getpropPath);
+	System.out.println("Old:"+getpropPath);
 		if(createtable.equals("yes"))
 		{
 
