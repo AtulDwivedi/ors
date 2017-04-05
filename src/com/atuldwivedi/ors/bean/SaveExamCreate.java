@@ -3,8 +3,8 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
+package com.atuldwivedi.ors.bean;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import java.sql.*;
 
 public class SaveExamCreate{
@@ -38,18 +38,18 @@ public class SaveExamCreate{
 		String post=p;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.SaveExamCreate- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveExamCreate- Connection has been created.");
 		}
 		String sql="UPDATE EXAM SET EXAM_ID='"+eid+"', EXAM_NAME='"+ename+"', CUTOFF='"+coff+"' WHERE JOB_ID='"+jobid+"' AND POST='"+p+"'";
 		Statement stmt=con.createStatement();
 		stmt.executeUpdate(sql);
 		flag=true;
-			System.out.println("JavaReport: bean.SaveExamCreate- JobDetails have been updated.");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveExamCreate- JobDetails have been updated.");
 		}
 		catch(Exception e){
-			System.out.println("Exceptionfrom: bean.SaveExamCreate- "+e);
+			System.out.println("Exceptionfrom: com.atuldwivedi.ors.bean.SaveExamCreate- "+e);
 		}
 		return flag;
 	}

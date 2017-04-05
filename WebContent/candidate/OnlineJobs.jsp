@@ -1,5 +1,4 @@
-
-<%@page import="conn.*,java.sql.*,java.io.*"%>
+<%@page import="java.sql.*,java.io.*,com.atuldwivedi.ors.dao.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -51,7 +50,7 @@
 					Connection con=null;
 					
 					if(con==null){
-						con=ConnectionProvider.getCon();
+						con = ConnectionProvider.getConnection();
 						System.out.println("            ...!!!...            ");
 						System.out.println("JSP Report: file.ViewJobDetails- Connection has been created.");
 					}

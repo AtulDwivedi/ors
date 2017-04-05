@@ -153,7 +153,7 @@
 
 </head>
 
-<body style="margin:0px"><jsp:useBean id="compregval" class="bean.CompRejValues" />
+<body style="margin:0px"><jsp:useBean id="compregval" class="com.atuldwivedi.ors.bean.CompRejValues" />
 <jsp:setProperty name="compregval" property="*" />
     <table width="100%" height="390" border="1">
         <tr>

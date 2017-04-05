@@ -3,8 +3,8 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
+package com.atuldwivedi.ors.bean;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import java.sql.*;
 
 public class SaveCandEdit{
@@ -149,15 +149,15 @@ public class SaveCandEdit{
 		String username=s1;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.SaveCandEdit- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveCandEdit- Connection has been created.");
 			}
 			Statement stmt=con.createStatement();
 			String sql= "UPDATE STUDENTREGISTER SET NAME='" + name + "', GENDER='" + gender + "', DOB='" + dob + "', COLLNAME='" + collname + "', COLLPHONE='" + collphone + "', EMAIL='" + email + "', BRANCH='" + branch + "', MARKS='" + marks + "', DEGREE='" + degree + "', EMAILID='" + emailid + "', TELEPHONE='" + telephone + "', ADDR='" + addr + "', STATES='" + states + "', PINCODE='" + pincode + "', CATEGORY='" + category + "'WHERE  USERNAME='" + username + "'";
 			
 			//PreparedStatement pst=con.prepareStatement(sql);
-			//System.out.println("JavaReport: bean.SaveCandEdit- Statement has been prepared.");
+			//System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveCandEdit- Statement has been prepared.");
 			/*pst.setString(2,name);
 			pst.setString(3,gender);
 			pst.setString(4,dob);
@@ -175,18 +175,18 @@ public class SaveCandEdit{
 			pst.setString(16,category);
 			pst.setString(1,username);
 			System.out.println("Branch: "+dob);
-			System.out.println("JavaReport: bean.SaveCandEdit- Values have been filled to the columns.");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveCandEdit- Values have been filled to the columns.");
 			i=pst.executeUpdate();
-			System.out.println("JavaReport: bean.SaveCandEdit- After updation the returning value is= "+i);
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveCandEdit- After updation the returning value is= "+i);
 			if(i>0){
 				flag=true;
-				System.out.println("JavaReport: bean.SaveCandEdit- Candidate's table STUDENTREGISTER has been updated.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveCandEdit- Candidate's table STUDENTREGISTER has been updated.");
 			}*/
 			stmt.executeUpdate(sql);
 			flag=true;
 		}
 		catch(Exception e){
-			System.out.println("ExceptionFrom: bean.SaveCandEdit- "+e);
+			System.out.println("ExceptionFrom: com.atuldwivedi.ors.bean.SaveCandEdit- "+e);
 		}
 		return flag;
 	}

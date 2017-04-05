@@ -115,7 +115,7 @@
 	</script>
 
     <body style="margin:0px" bgcolor="#FFFFFF">
-    <jsp:useBean id="cep" class="bean.CompEditProfile" />
+    <jsp:useBean id="cep" class="com.atuldwivedi.ors.bean.CompEditProfile" />
 <jsp:setProperty name="cep" property="*" />
         <table width="100%" border="1" bgcolor="#FFFFFF">
             <tr>
@@ -131,7 +131,7 @@
             
             String c1 = (String) session.getAttribute("s1");
 			System.out.println(c1);
-           	Connection con=ConnectionProvider.getCon();
+           	Connection con = ConnectionProvider.getConnection();
 			Statement st = con.createStatement();
 
 

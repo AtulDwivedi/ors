@@ -3,9 +3,11 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
-import java.sql.*;
+package com.atuldwivedi.ors.bean;
+import java.sql.Connection;
+import java.sql.Statement;
+
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 
 public class ChangeCandPass{
 	private String username;
@@ -47,18 +49,18 @@ public class ChangeCandPass{
 	public boolean changePass(){
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.SaveJobDetails- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveJobDetails- Connection has been created.");
 			}
 			String sql="UPDATE LOGIN SET PASSWORD='"+new_pass+"'WHERE USERNAME='"+username+"' AND PASSWORD='"+password+"'";
 			Statement stmt=con.createStatement();
 			stmt.executeUpdate(sql);
 			flag=true;
-			System.out.println("JavaReport: bean.ChangeCandPass- Password has been changed.");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.ChangeCandPass- Password has been changed.");
 		}
 		catch(Exception e){
-			System.out.println("ExceptionFrom: bean.ChangeCandPass- "+e);
+			System.out.println("ExceptionFrom: com.atuldwivedi.ors.bean.ChangeCandPass- "+e);
 		}
 		return flag;
 	}

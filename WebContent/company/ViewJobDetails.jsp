@@ -51,7 +51,7 @@
 			if(con==null){
 				con=ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.ViewCompRequirement- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.ViewCompRequirement- Connection has been created.");
 			}
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("SELECT * FROM JOBDETAIL where name = '"+(String)session.getAttribute("s1")+"'");

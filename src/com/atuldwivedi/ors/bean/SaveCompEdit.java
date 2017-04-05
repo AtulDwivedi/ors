@@ -3,8 +3,8 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
+package com.atuldwivedi.ors.bean;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import java.sql.*;
 
 public class SaveCompEdit{
@@ -66,9 +66,9 @@ public class SaveCompEdit{
 		String username=s1;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport:  bean.SaveCompEdit-- Connection has been created.");
+				System.out.println("JavaReport:  com.atuldwivedi.ors.bean.SaveCompEdit-- Connection has been created.");
 			}
 			String sql="UPDATE COMPANYREGISTER SET NAME='"+name+"',ADDR='"+addr+"',POST='"+post+"',CRITERIA='"+criteria+"',EMAIL='"+email+"',CONTACT='"+contact+"',CUTOFF='"+cutoff+"' WHERE USERNAME='"+username+"'";
 			Statement stmt=con.createStatement();
@@ -85,7 +85,7 @@ public class SaveCompEdit{
 			
 			
 				flag=true;
-			System.out.println("JavaReport: bean.SaveCompEdit- Candidate table has been updated.");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveCompEdit- Candidate table has been updated.");
 			
 			
 		}

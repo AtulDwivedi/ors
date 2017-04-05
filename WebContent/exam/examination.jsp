@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html" import="java.sql.*,conn.*" session="true"%>
+<%@ page language="java" contentType="text/html" import="java.sql.*,com.atuldwivedi.ors.dao.util.*" session="true"%>
 <html >
  
 <head>
@@ -48,7 +48,7 @@ out.println(t);
      Statement st1=null,st2=null,st3=null;
      Connection con = null;
 
-           con=ConnectionProvider.getCon();
+           con = ConnectionProvider.getConnection();
 
               st1=con.createStatement();
               st2=con.createStatement();

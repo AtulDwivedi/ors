@@ -1,4 +1,4 @@
-<%@page import="conn.*,java.sql.*"%>
+<%@page import="java.sql.*,com.atuldwivedi.ors.dao.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -57,7 +57,7 @@
             }
         </script>
     </head>
-    <body><jsp:useBean id="scp" class="bean.ChangeCandPass" />
+    <body><jsp:useBean id="scp" class="com.atuldwivedi.ors.bean.ChangeCandPass" />
 <jsp:setProperty name="scp" property="*" />
         <table width="100%" align="left" height="482" border="1">
             <tr>
@@ -74,7 +74,7 @@
             String c1 = (String) session.getAttribute("s1");
             String c2 = (String) session.getAttribute("s2");
           
-            Connection con=ConnectionProvider.getCon();
+            Connection con = ConnectionProvider.getConnection();
             Statement stmt = con.createStatement();
 			ResultSet 
 			rs=stmt.executeQuery("select * from Login where Username='" + c1 + "' and Password ='" + c2 + "'");

@@ -3,9 +3,9 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
+package com.atuldwivedi.ors.bean;
 import java.sql.*;
-import conn.*;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 
 import javax.servlet.*;
 import java.io.*;
@@ -26,9 +26,9 @@ public class Login extends HttpServlet
 		try
 		{	
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.Login- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.Login- Connection has been created.");
 			}
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("SELECT * FROM LOGIN");
@@ -38,7 +38,7 @@ public class Login extends HttpServlet
 					flag=true;
 				}
 			}
-			System.out.println("JavaReport: bean.Login- Stutus has been fetched.");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.Login- Stutus has been fetched.");
 			
 				
 		}

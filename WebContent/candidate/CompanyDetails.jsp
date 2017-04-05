@@ -1,5 +1,4 @@
-
-<%@page import="java.io.*,java.sql.*,conn.*"%>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -50,9 +49,9 @@
 	    //ResultSet rs=null;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.ViewCompRequirement- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.ViewCompRequirement- Connection has been created.");
 			}
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("SELECT * FROM COMPANYREGISTER");

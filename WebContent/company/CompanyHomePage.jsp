@@ -53,7 +53,7 @@ a:active {
 	Connection con=null;
 	try{
 		if(con==null){
-			con=ConnectionProvider.getCon();
+			con = ConnectionProvider.getConnection();
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("SELECT * FROM COMPANYREGISTER WHERE USERNAME='"+c1+"'");
 			while(rs.next()){

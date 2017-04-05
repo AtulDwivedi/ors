@@ -1,4 +1,4 @@
-<%@page import="java.io.*,conn.*,java.sql.*"%>
+<%@page import="java.io.*,com.atuldwivedi.ors.dao.util.*,java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
         
@@ -6,7 +6,7 @@
         ResultSet rs = null;
         String sql = null;
         try {
-            Connection con=ConnectionProvider.getCon();
+            Connection con = ConnectionProvider.getConnection();
             st = con.createStatement();
         } catch (Exception ex) {
 			System.out.print(ex);
@@ -52,7 +52,7 @@
         String jobid = request.getParameter("jobid");
 		System.out.println(jobid);
         try {
-       			Connection con=ConnectionProvider.getCon();
+       			Connection con = ConnectionProvider.getConnection();
 				Statement stmt=con.createStatement();
                 sql = "select * from Exam where Job_ID='" + jobid + "'";
                 ResultSet rs1 = stmt.executeQuery(sql);

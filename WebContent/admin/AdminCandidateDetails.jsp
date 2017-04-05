@@ -3,7 +3,7 @@
     Created on : Dec 3, 2012, 11:39:04 AM
     Author     : Atul Dwivedi
 --%>
-<%@page import="java.io.*,java.sql.*,conn.*"%>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -73,7 +73,7 @@ a:active {
    
       try
               {
-			  Connection con=ConnectionProvider.getCon();
+			  Connection con = ConnectionProvider.getConnection();
       Statement st=con.createStatement();
       ResultSet rs=st.executeQuery("select *from STUDENTREGISTER");
 	  String  uid="",name="",address="",phone="",email="",cat="";

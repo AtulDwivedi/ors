@@ -3,9 +3,9 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
+package com.atuldwivedi.ors.bean;
 import java.sql.*;
-import conn.*;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 
 public class SaveExamDetails{
 	private String eid;
@@ -41,9 +41,9 @@ public class SaveExamDetails{
 		String name=nm;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.SaveExamDetails- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveExamDetails- Connection has been created.");
 			}
 			PreparedStatement pst=con.prepareStatement("INSERT INTO EXAM VALUES(?,?,?,?,?,?)");
 			pst.setString(1,job_id);
@@ -54,10 +54,10 @@ public class SaveExamDetails{
 			pst.setString(6,name);
 			pst.executeUpdate();
 			flag=true;
-			System.out.println("JavaReport: bean.SaveExamDetails- Values has been inserted");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveExamDetails- Values has been inserted");
 		}
 		catch(Exception e){
-			System.out.println("Exceptionfrom: bean.SaveExamDetails- "+e);
+			System.out.println("Exceptionfrom: com.atuldwivedi.ors.bean.SaveExamDetails- "+e);
 		}
 		return flag;
 	}

@@ -3,8 +3,8 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
+package com.atuldwivedi.ors.bean;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import java.sql.*;
 
 public class CompEditProfile{
@@ -23,9 +23,9 @@ public class CompEditProfile{
 	public boolean compFetch(){
 		try{
 			if(con==null){
-				Connection con=ConnectionProvider.getCon();
+				Connection con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.CompEditProfile- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.CompEditProfile- Connection has been created.");
 			}
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("SELECT * FROM COMPANYREGISTER");

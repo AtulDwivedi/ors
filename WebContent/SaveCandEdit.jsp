@@ -1,4 +1,4 @@
-<jsp:useBean id="sce" class="bean.SaveCandEdit" />
+<jsp:useBean id="sce" class="com.atuldwivedi.ors.bean.SaveCandEdit" />
 <jsp:setProperty name="sce" property="*" />
 <% 
 	String c1=(String) session.getAttribute("s1");

@@ -260,7 +260,7 @@
 </head>
 
 <body>
-	<jsp:useBean id="cep" class="bean.CandEditProfile" />
+	<jsp:useBean id="cep" class="com.atuldwivedi.ors.bean.CandEditProfile" />
 	<jsp:setProperty name="cep" property="*" />
 	<%			
 			String gender=null;

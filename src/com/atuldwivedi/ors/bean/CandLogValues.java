@@ -3,9 +3,11 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
-import java.sql.*;
+package com.atuldwivedi.ors.bean;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 
 public class CandLogValues{
 	private String username;
@@ -32,9 +34,9 @@ public class CandLogValues{
 		try
 			{	
 				if(con==null){
-					con=ConnectionProvider.getCon();
+					con = ConnectionProvider.getConnection();
 					System.out.println("            ...!!!...            ");
-					System.out.println("JavaReport: bean.CandLogValues- Connection has been created.");
+					System.out.println("JavaReport: com.atuldwivedi.ors.bean.CandLogValues- Connection has been created.");
 				}
 				PreparedStatement 
 				ps=con.prepareStatement("INSERT INTO LOGIN VALUES(?,?,?)");

@@ -2,8 +2,8 @@
 							->	Created On : January 14, 2012
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
-	package bean;
-import conn.*;
+	package com.atuldwivedi.ors.bean;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import java.sql.*;
 
 public class CompLogValues{
@@ -31,9 +31,9 @@ public class CompLogValues{
 		try
 			{	
 				if(con==null){
-					con=ConnectionProvider.getCon();
+					con = ConnectionProvider.getConnection();
 					System.out.println("            ...!!!...            ");
-					System.out.println("JavaReport: bean.CompLogValues- Connection has been created.");
+					System.out.println("JavaReport: com.atuldwivedi.ors.bean.CompLogValues- Connection has been created.");
 				}
 				PreparedStatement 
 				ps=con.prepareStatement("INSERT INTO LOGIN VALUES(?,?,?)");

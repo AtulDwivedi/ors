@@ -1,4 +1,4 @@
-<jsp:useBean id="log" class="bean.Login" />
+<jsp:useBean id="log" class="com.atuldwivedi.ors.bean.Login" />
 <jsp:setProperty name="log" property="*" />
 <%
 			String s1 = request.getParameter("username");

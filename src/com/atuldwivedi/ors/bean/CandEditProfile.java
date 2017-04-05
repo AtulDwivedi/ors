@@ -3,9 +3,12 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
-import java.sql.*;
+package com.atuldwivedi.ors.bean;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 
 public class CandEditProfile{
 	//private String username;
@@ -38,9 +41,9 @@ public class CandEditProfile{
 		String username=s1;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.CandEditProfile- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.CandEditProfile- Connection has been created.");
 			}
 			
 			Statement stmt=con.createStatement();
@@ -63,7 +66,7 @@ public class CandEditProfile{
 					pincode=rs.getString(15);
 					category=rs.getString(16);
 					flag=true;
-					System.out.println("JavaReport: bean.CandEditProfile- Values from STUDENTREGISTER have been fetched.");
+					System.out.println("JavaReport: com.atuldwivedi.ors.bean.CandEditProfile- Values from STUDENTREGISTER have been fetched.");
 				}
 			}
 		}

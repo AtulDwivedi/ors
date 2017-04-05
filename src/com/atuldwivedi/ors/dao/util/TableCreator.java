@@ -1,8 +1,10 @@
-package tablecreate;
-import conn.ConnectionProvider;
-import java.sql.*;
-import java.io.*;
-import java.util.*;
+package com.atuldwivedi.ors.dao.util;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.util.StringTokenizer;
+
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 
 public class TableCreator
 {
@@ -19,7 +21,7 @@ public class TableCreator
 			while(st.hasMoreTokens())
 			{
 				String query=st.nextToken();
-				Connection con=ConnectionProvider.getCon();
+				Connection con = ConnectionProvider.getConnection();
 				Statement stm=con.createStatement();
 					System.out.println("start create table");
 					if(query.trim().equals("stop"))

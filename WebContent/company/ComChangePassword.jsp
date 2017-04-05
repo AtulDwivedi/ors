@@ -3,7 +3,7 @@
     Created on : Dec 19, 2012, 9:41:16 PM
     Author     : User
 --%>
-<%@page import="java.io.*,java.sql.*,conn.*" %>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -75,7 +75,7 @@
             String c1 = (String) session.getAttribute("s1");
             String c2 = (String) session.getAttribute("s2");
             // session.getAttribute("c1", c1);
-            Connection con=ConnectionProvider.getCon();
+            Connection con = ConnectionProvider.getConnection();
             Statement st = con.createStatement();
 
             ResultSet rs = st.executeQuery("select * from Login where Username='" + c1 + "' and Password ='" + c2 + "'");

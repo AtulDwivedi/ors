@@ -3,8 +3,8 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
+package com.atuldwivedi.ors.bean;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import java.sql.*;
 
 public class SaveJobDetails{
@@ -71,9 +71,9 @@ public class SaveJobDetails{
 		System.out.println(name);
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.SaveJobDetails- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveJobDetails- Connection has been created.");
 			}
 			//String sql="UPDATE JOBDETAIL SET JOB_ID='"+job_id+"', POST='"+post+"', CRITERIA='"+criteria+"', VACANCIES='"+vacancies+"', SALARY='"+salary+"', LAST_DATE='"+lastdate+"', NAME='"+name+"', EXAM_ID='"+eid+"' WHERE USERNAME='"+username+"'";
 			PreparedStatement pst1=con.prepareStatement("INSERT INTO JOBDETAIL VALUES(?,?,?,?,?,?,?)");
@@ -85,7 +85,7 @@ public class SaveJobDetails{
 			pst1.setString(6,lastdate);
 			pst1.setString(7,name);
 			pst1.executeUpdate();
-			System.out.println("JavaReport: bean.SaveJobDetails- Values in Job_Detail Table has been inserted");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveJobDetails- Values in Job_Detail Table has been inserted");
 			
 			
 			PreparedStatement pst2=con.prepareStatement("INSERT INTO EXAM VALUES(?,?,?,?,?,?)");
@@ -97,10 +97,10 @@ public class SaveJobDetails{
 			pst2.setString(6,name);
 			pst2.executeUpdate();
 			flag=true;
-			System.out.println("JavaReport: bean.SaveJobDetails- Values in Exam Table has been inserted");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveJobDetails- Values in Exam Table has been inserted");
 			}
 			catch(Exception e){
-				System.out.println("ExceptionFrom: bean.SaveJobDetails- "+e);
+				System.out.println("ExceptionFrom: com.atuldwivedi.ors.bean.SaveJobDetails- "+e);
 			}
 			return flag;
 		}

@@ -3,9 +3,9 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
+package com.atuldwivedi.ors.bean;
 import java.sql.*;
-import conn.*;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 
 public class SaveEditJobDetails{
 	private String jid;
@@ -62,19 +62,19 @@ public class SaveEditJobDetails{
 		String nm=name;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.SaveEditJobDetails- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveEditJobDetails- Connection has been created.");
 			}
 			String sql="UPDATE JOBDETAIL SET POST='"+post+"', CRITERIA='"+criteria+"', VACANCIES='"+vacancies+"', SALARY='"+salary+"', LAST_DATE='"+lastdate+"' WHERE NAME='"+nm+"' AND JOB_ID='"+jid+"'";
 			Statement stmt=con.createStatement();
 			stmt.executeUpdate(sql);
 			
 			flag=true;
-			System.out.println("JavaReport: bean.SaveEditJobDetails- JobDetails have been updated.");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveEditJobDetails- JobDetails have been updated.");
 		}
 		catch(Exception e){
-			System.out.println("Exceptionfrom: bean.SaveEditJobDetails- "+e);
+			System.out.println("Exceptionfrom: com.atuldwivedi.ors.bean.SaveEditJobDetails- "+e);
 		}
 		return flag;
 	}

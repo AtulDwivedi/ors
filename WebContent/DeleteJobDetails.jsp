@@ -1,4 +1,4 @@
-<%@page import="conn.*,java.sql.*;"%>
+<%@page import="com.atuldwivedi.ors.dao.util.*,java.sql.*;"%>
 
 <%
 	String name=(String) session.getAttribute("name");
@@ -6,7 +6,7 @@
 	Connection con=null;
 	try{
 		if(con==null){
-			con=ConnectionProvider.getCon();
+			con = ConnectionProvider.getConnection();
 		}
 		Statement stmt=con.createStatement();
 		String sql="DELETE FROM JOBDETAIL WHERE JOB_ID='"+jid+"' AND NAME='"+name+"'";

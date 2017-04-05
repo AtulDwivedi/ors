@@ -3,7 +3,7 @@
     Created on : Nov 18, 2012, 3:39:18 PM
     Author     : Atul Dwivedi
 --%>
-<%@page import="java.io.*,conn.*,java.sql.*" session="true"%>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.*" session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -103,7 +103,7 @@
                             <% String name=null;
             try {String c1=(String) session.getAttribute("s1");
 			
-               Connection con=ConnectionProvider.getCon();
+               Connection con = ConnectionProvider.getConnection();
 			   Statement stmt=con.createStatement();
                 Statement st = con.createStatement();
                 Statement st1 = con.createStatement();

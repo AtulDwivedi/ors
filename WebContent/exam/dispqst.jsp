@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*,conn.*" session="true" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*,com.atuldwivedi.ors.dao.util.*" session="true" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -17,7 +17,7 @@
         String qstn = "", ch1 = "", ch2 = "", ch3 = "", ch4 = "", ans = "";
         try {
             sql = "select * from Temp_Data where cand_ID='" + studentid + "' and Ques_No=" + qno;
-           con=ConnectionProvider.getCon();
+           con = ConnectionProvider.getConnection();
             st = con.createStatement();
             rs = st.executeQuery(sql);
             if (rs.next()) {

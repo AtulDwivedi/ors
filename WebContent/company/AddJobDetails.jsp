@@ -97,7 +97,7 @@
     
   
     
-    <body style="margin:0px" bgcolor="#FFFFFF"><jsp:useBean id="sjd" class="bean.SaveJobDetails" />
+    <body style="margin:0px" bgcolor="#FFFFFF"><jsp:useBean id="sjd" class="com.atuldwivedi.ors.bean.SaveJobDetails" />
 <jsp:setProperty name="sjd" property="*" />
     <% //out.println(request.getParameter("username")); %>
         <table width="100%" border="1" bgcolor="#FFFFFF">

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" language="java"  import="java.sql.*" errorPage="" %>
-<%@page import="java.io.*,conn.*,java.sql.*;" session="true" %>
+<%@page import="java.io.*,com.atuldwivedi.ors.dao.util.*,java.sql.*;" session="true" %>
 
 <%
 
@@ -24,7 +24,7 @@
 		int n;
 		
                 for (n = 0; n < 10; n++) {
-					 con=ConnectionProvider.getCon(); 
+					 con = ConnectionProvider.getConnection(); 
 					
 					 st=con.createStatement();
       rs = st.executeQuery("select * from Questions Where Job_ID='" + jobID + "' and Exam_ID='" + examID + "' and Ques_No='" + (n+1) + "'");

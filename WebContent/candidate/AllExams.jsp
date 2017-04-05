@@ -1,5 +1,4 @@
-
-<%@page import="conn.*,java.sql.*"%>
+<%@page import="java.sql.*,com.atuldwivedi.ors.dao.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -34,7 +33,7 @@
         try {Connection con=null;
             
                  
-	  con=ConnectionProvider.getCon();
+	  con = ConnectionProvider.getConnection();
 		Statement stmt = con.createStatement();
        %>
        <table width="90%" height="54" border="1" align="center" style="vertical-align:top">

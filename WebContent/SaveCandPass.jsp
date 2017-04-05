@@ -1,4 +1,4 @@
-<jsp:useBean id="scp" class="bean.ChangeCandPass" />
+<jsp:useBean id="scp" class="com.atuldwivedi.ors.bean.ChangeCandPass" />
 <jsp:setProperty name="scp" property="*" />
 <% 
 	if(scp.changePass()){

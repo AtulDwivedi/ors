@@ -3,8 +3,8 @@
 							->	Programmer : Online Recruitment Project Team
 																				****	****	****	*/
 	
-package bean;
-import conn.*;
+package com.atuldwivedi.ors.bean;
+import com.atuldwivedi.ors.dao.util.ConnectionProvider;
 import java.sql.*;
 
 
@@ -67,9 +67,9 @@ public class SaveQues{
 		String eid=examid;
 		try{
 			if(con==null){
-				con=ConnectionProvider.getCon();
+				con = ConnectionProvider.getConnection();
 				System.out.println("            ...!!!...            ");
-				System.out.println("JavaReport: bean.SaveQues- Connection has been created.");
+				System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveQues- Connection has been created.");
 		}
 		PreparedStatement pst=con.prepareStatement("INSERT INTO QUESTIONS VALUES(?,?,?,?,?,?,?,?,?)");
 		pst.setString(1,jid);
@@ -83,10 +83,10 @@ public class SaveQues{
 		pst.setString(9,answer);
 		pst.executeUpdate();
 			flag=true;
-			System.out.println("JavaReport: bean.SaveQues- Values has been inserted");
+			System.out.println("JavaReport: com.atuldwivedi.ors.bean.SaveQues- Values has been inserted");
 		}
 		catch(Exception e){
-			System.out.println("Exceptionfrom: bean.SaveQues- "+e);
+			System.out.println("Exceptionfrom: com.atuldwivedi.ors.bean.SaveQues- "+e);
 		}
 		return flag;
 	}

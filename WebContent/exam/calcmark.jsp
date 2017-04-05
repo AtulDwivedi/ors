@@ -1,7 +1,7 @@
 <form id="form1" name="form1" method="post" action="calcmark.jsp">
     <input name="OK" type="submit" id="OK" value="Submit" />
 </form>
-<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*,conn.*" session="true" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*,com.atuldwivedi.ors.dao.util.*" session="true" %>
 <%
         Connection con;
         Statement st;
@@ -33,7 +33,7 @@
                 String studentid = session.getAttribute("s1").toString();
 				System.out.println("CAND_ID: "+studentid);
                 sql = "delete from Temp_Data where CAND_ID='" + studentid + "'";
-                con=ConnectionProvider.getCon();
+                con = ConnectionProvider.getConnection();
                 st = con.createStatement();
                 st.executeUpdate(sql);
 				System.out.println("MessageToTeam: Temp_Table has been Truncated.");

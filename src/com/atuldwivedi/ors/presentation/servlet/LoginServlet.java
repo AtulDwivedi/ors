@@ -52,16 +52,15 @@ public class LoginServlet extends HttpServlet {
 			String userType = login.getUserType();
 			
 			if(userType.equals("admin")){
-				response.sendRedirect("AdminHomePage.jsp");
+				request.getRequestDispatcher("AdminHomePage.jsp").forward(request, response);
 			}
 			else if(userType.equals("comp"))
 			{
 				request.getRequestDispatcher("company/CompanyHomePage.jsp").forward(request, response);
-//				response.sendRedirect("company/CompanyHomePage.jsp");
 			}
 			else if(userType.equals("cand"))
 			{
-				response.sendRedirect("candidate/CandidateHomePage.jsp");
+				request.getRequestDispatcher("candidate/CandidateHomePage.jsp").forward(request, response);
 			}
 			else
 			{
