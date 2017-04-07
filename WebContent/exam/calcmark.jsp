@@ -38,13 +38,21 @@
                 st.executeUpdate(sql);
 				System.out.println("MessageToTeam: Temp_Table has been Truncated.");
 
-                String examID = session.getAttribute("examid").toString();
+                String examID = session.getAttribute("examId").toString();
 				System.out.println("EXAM_ID: "+examID);
-                String jobID = session.getAttribute("jobid").toString();
+                String jobID = session.getAttribute("jobId").toString();
 				System.out.println("JOB_ID: "+jobID);
                 mark=Integer.parseInt(session.getAttribute("mark").toString());
 				System.out.println("Marks: "+mark);
-                sql="Insert into EXAM_RESULT values('" + studentid + "','" +  examID + "','" + jobID + "'," + mark + ")";
+				ResultSet rs2 = st.executeQuery("SELECT CUTOFF FROM EXAM WHERE JOB_ID = "+jobID+" AND EXAM_ID = "+examID);
+				rs2.next();
+				double cutOff = rs2.getDouble(1);
+				String status = "Failed";
+				if(mark*100/10 >= cutOff){
+					status = "Passed";
+				}
+				
+                sql="Insert into EXAM_RESULT values('" + studentid + "','" +  Integer.parseInt(examID) + "','" + Integer.parseInt(jobID) + "'," + mark + ", '"+status+"')";
                 st.executeUpdate(sql);
                 response.sendRedirect("dispresult.jsp");
             } catch (Exception ex) {

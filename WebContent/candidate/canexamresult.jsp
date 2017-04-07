@@ -42,6 +42,7 @@
                             <td bgcolor="#CCCCCC"><div align="center"><strong>Exam ID</strong></div></td>
                             <td bgcolor="#CCCCCC"><div align="center"><strong>Job ID</strong></div></td>
                             <td bgcolor="#CCCCCC"><div align="center"><strong>Mark</strong></div></td>
+                             <td bgcolor="#CCCCCC"><div align="center"><strong>Result</strong></div></td>
                         </tr>
                         <%
                         while (rs.next()) {
@@ -50,6 +51,13 @@
                             out.println("<td >" + rs.getString(3) + "</td>");
 							out.println("<td >" + rs.getString(2) + "</td>");
                             out.println("<td >" + rs.getString(4) + "</td>");
+                            if(rs.getString(5).equals("Passed")){
+                            	out.println("<td bgcolor='green'>" + rs.getString(5) + "</td>");
+                            }
+                            else{
+                            	out.println("<td  bgcolor='red'>" + rs.getString(5) + "</td>");
+                            }
+                            
 
                             out.println("</tr>");
                         }%>

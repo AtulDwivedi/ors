@@ -9,9 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.atuldwivedi.ors.dao.impl.CandidateDaoImpl;
+import com.atuldwivedi.ors.dao.service.CandidateDao;
 import com.atuldwivedi.ors.model.Login;
 import com.atuldwivedi.ors.service.impl.LoginServiceImpl;
 import com.atuldwivedi.ors.service.services.LoginService;
+import com.sun.org.apache.xml.internal.security.c14n.CanonicalizerSpi;
 
 
 /**
@@ -56,10 +59,13 @@ public class LoginServlet extends HttpServlet {
 			}
 			else if(userType.equals("comp"))
 			{
+				session.setAttribute("user", userName);
 				request.getRequestDispatcher("company/CompanyHomePage.jsp").forward(request, response);
 			}
 			else if(userType.equals("cand"))
 			{
+				CandidateDao candidateDao = new CandidateDaoImpl();
+				session.setAttribute("user", candidateDao.getCandidateByUserName(userName));
 				request.getRequestDispatcher("candidate/CandidateHomePage.jsp").forward(request, response);
 			}
 			else

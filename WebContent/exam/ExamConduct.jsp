@@ -1,4 +1,4 @@
-<%@page import="java.io.*,com.atuldwivedi.ors.dao.util.*,java.sql.*"%>
+<%@page import="java.io.*,com.atuldwivedi.ors.dao.util.*,java.sql.*" session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
         
@@ -109,7 +109,8 @@
 
                     <%
 
-                session.setAttribute("jobid", request.getParameter("jobid"));
+                session.setAttribute("jobId", request.getParameter("jobid"));
+             
                 
 				
             

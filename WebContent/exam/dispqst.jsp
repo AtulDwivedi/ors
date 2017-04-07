@@ -7,32 +7,34 @@
         <title>Online Recruitment System</title>
     </head>
     <body>
+  
         <%
         Connection con;
         Statement st;
         ResultSet rs;
         String sql;
         int qno = Integer.parseInt(request.getParameter("qno"));
+        int jobId = Integer.parseInt(session.getAttribute("jobId").toString());
+        int examId = Integer.parseInt(session.getAttribute("examId").toString());
         String studentid = session.getAttribute("s1").toString();
         String qstn = "", ch1 = "", ch2 = "", ch3 = "", ch4 = "", ans = "";
         try {
-            sql = "select * from Temp_Data where cand_ID='" + studentid + "' and Ques_No=" + qno;
+            sql = "select * from questions where job_ID='" + jobId + "' and exam_id = '"+examId+"' and Ques_No=" + qno;
            con = ConnectionProvider.getConnection();
             st = con.createStatement();
             rs = st.executeQuery(sql);
             if (rs.next()) {
-                qstn = rs.getString(3);
-                ch1 = rs.getString(4);
-                ch2 = rs.getString(5);
-                ch3 = rs.getString(6);
-                ch4 = rs.getString(7);
-                ans = rs.getString(8);
+                qstn = rs.getString(4);
+                ch1 = rs.getString(5);
+                ch2 = rs.getString(6);
+                ch3 = rs.getString(7);
+                ch4 = rs.getString(8);
+                ans = rs.getString(9);
         %>
 
 
 
         <form action="calcmark.jsp" method="post">
-
             <table width="829" height="244" border="1" bgcolor="#78AFA0" align="center">
                 <tr>
                     <td width="148"><strong>Question <%=qno%>

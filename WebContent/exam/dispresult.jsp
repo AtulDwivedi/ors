@@ -19,10 +19,10 @@ body {
         out.println("Your ID  is:  " + uname + "     You got  "+ mark + " Mark Out of 10");
 		 
 %><br>
-  Your Exam completed....
+  <span>${sessionScope.user.name}</span>Your Exam completed....
   <br>
   </font></p>
 <p>&nbsp;</p>
-<p><strong><a href="CandidateHomePage.jsp">Goto Home</a></strong></p>
+<p><strong><a href="<%=request.getContextPath() %>/candidate/CandidateHomePage.jsp">Goto Home</a></strong></p>
 </body>
 </html>

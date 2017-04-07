@@ -30,7 +30,7 @@ CREATE TABLE exam (
 )
 /
 CREATE TABLE exam_result (
-  cand_id number(10),
+  cand_id varchar2(30),
   exam_id number(10),
   job_id number(10),
   marks number(3),

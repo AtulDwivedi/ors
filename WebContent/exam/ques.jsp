@@ -9,8 +9,8 @@
 
 
 		String studentid=session.getAttribute("s1").toString();
-		String jobID=session.getAttribute("jobid").toString();
-		String examID=session.getAttribute("examid").toString();
+		String jobID=session.getAttribute("jobId").toString();
+		String examID=session.getAttribute("examId").toString();
 		
 		 System.out.println("Student ID is : "+studentid);
 		System.out.println("Job ID is : "+jobID);
@@ -38,9 +38,12 @@
                     }
                 }
                 session.setAttribute("mark","0");
-                session.setAttribute("examid", examID);
-				session.setAttribute("jobid", jobID);
-                response.sendRedirect("dispqst.jsp?qno=1");
+                
+               
+             session.setAttribute("examId", examID);
+				session.setAttribute("jobId", jobID); 
+				request.getRequestDispatcher("dispqst.jsp?qno=1").forward(request, response);
+                /* response.sendRedirect("dispqst.jsp?qno=1"); */
             } catch (Exception ex) {
                 System.out.println("Error: Cannot go forward<br>" + ex.toString() );
             }
