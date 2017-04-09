@@ -1,8 +1,9 @@
 package com.atuldwivedi.ors.presentation.listener;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import tablecreate.*;
-import loadprop.*;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+import com.atuldwivedi.ors.dao.util.TableCreator;
 
 public class ContxtListnr implements ServletContextListener
 {

@@ -24,7 +24,7 @@
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
             Connection conn = DriverManager.getConnection("jdbc:odbc:OnlineExam");
             Statement st = conn.createStatement();
-            Statement st2 = conn.createStatement();
+            Statement st2 = conn.createStatement(); 
             String stat = "";
             ResultSet rs;
             rs = st.executeQuery("select * from Login where Username='" + s1 + "' and Password='" + s2 + "'");

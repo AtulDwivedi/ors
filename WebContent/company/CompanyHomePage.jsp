@@ -3,7 +3,6 @@
     Created on : Nov 11, 2012, 12:44:55 PM
     Author     : user
 --%>
-<%@page import="conn.*,java.sql.*" session="true" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"

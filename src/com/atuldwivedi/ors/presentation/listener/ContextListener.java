@@ -1,17 +1,11 @@
 package com.atuldwivedi.ors.presentation.listener;
 
-import java.sql.SQLException;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import com.atuldwivedi.ors.dao.impl.SchemaDaoImpl;
-import com.atuldwivedi.ors.dao.util.ConnectionProvider;
-
-import loadprop.LoadProperty;
-import tablecreate.TableCreator;
 
 /**
  * Application Lifecycle Listener implementation class ContextListener

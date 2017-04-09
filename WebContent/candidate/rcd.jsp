@@ -37,20 +37,19 @@
 	class="com.atuldwivedi.ors.dao.impl.CandidateDaoImpl" />
 <jsp:useBean id="loginDao"
 	class="com.atuldwivedi.ors.dao.impl.LoginDaoImpl" />
-<%--<%
+<%
 	  if (loginDao.insertLogin(login) > 0) {
 		out.println("Login details inserted successfully!");
 		if (dao.insertCandidate(candidate) > 0) {
-			%> --%>
-			<%
+			
 			HttpSession ses = request.getSession();
 			ses.setAttribute("s1", candidate);
 			String candHome = "CandidateHomePage.jsp";
 			System.out.println(candHome);
 			%>
 			<jsp:forward page="<%=candHome%>" />
-		<%-- <%
+		 <%
 		}
 	}  
 	
-%>--%>
+%>

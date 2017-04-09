@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" language="java"
-	import="java.sql.*,conn.*" errorPage=""%>
+	import="java.sql.*" %>
 <%@ page import="com.atuldwivedi.ors.model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -266,8 +266,8 @@
 			String gender=null;
 			String branch=null;
 			String degree=null;
-			HttpSession ss1=request.getSession();
-			Candidate s1=(Candidate)ss1.getAttribute("s1");
+			/* HttpSession ss1=request.getSession(); */
+			Candidate s1=(Candidate)session.getAttribute("s1");
 			/* if(cep.candFetch(s1))
 			{
 				gender=cep.degree;
@@ -331,7 +331,7 @@
 										Of Birth </font></strong></td>
 							<td width="52%" bgcolor="#F3E8DA"><input TYPE="text"
 								NAME="dob" size="30" maxlength=30
-								value="<% out.print(cep.dob); %>"></td>
+								value="${s1.dob}"></td>
 						</tr>
 
 						<tr bgcolor=#FEF7E9 wdth=100%>
