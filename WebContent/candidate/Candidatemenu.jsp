@@ -19,7 +19,7 @@
   <tr>
     <td width="145" height="531" valign="top"><p><img src="<%=request.getContextPath()+"/images/jobseekersign[1].gif"%>" width="145" height="162" /></p>
   <p align="left"><strong><span class="style2"><a href="index.jsp">Home</a><br>
-          <a href="<%=request.getContextPath() %>/candidate/EditCandProfile.jsp">EditProfile</a><br>
+          <a href="<%=request.getContextPath() %>/CandidateServlet/Edit">EditProfile</a><br>
           <a href="<%=request.getContextPath() %>/candidate/ChangeCandPass.jsp">Change Password</a><br>
           <a href="<%=request.getContextPath() %>/candidate/CompanyDetails.jsp">View Company Details</a><br>
           <a href="<%=request.getContextPath() %>/candidate/AllExams.jsp">All Exam</a><br>

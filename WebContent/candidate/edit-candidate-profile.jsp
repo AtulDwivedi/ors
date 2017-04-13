@@ -31,9 +31,7 @@
 
 <body>
 <body>
-<%
-Candidate cand = (Candidate)session.getAttribute("s1");
-%>
+
 	<div style="float: left; width: 100%">
 		<div style="float: left; width: 100%"><jsp:include page="CandidateHeader.jsp" /></div>
 		<div style="float: left; width: 100%">

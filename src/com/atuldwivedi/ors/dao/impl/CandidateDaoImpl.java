@@ -118,6 +118,11 @@ public class CandidateDaoImpl implements CandidateDao {
 			candidate.setGender(rs.getString(3));
 			candidate.setDob(rs.getString(4));
 			candidate.setExperienced(rs.getBoolean(6));
+			
+			rs = stmt.executeQuery("SELECT * FROM ORS_CONTACT WHERE USERNAME = '"+userName+"'");
+			rs = stmt.executeQuery("SELECT * FROM ORS_ADDRESS WHERE USERNAME = '"+userName+"'");
+			rs = stmt.executeQuery("SELECT * FROM ORS_EDUCATION WHERE USERNAME = '"+userName+"'");
+			rs = stmt.executeQuery("SELECT * FROM ORS_EXPERIENCE WHERE USERNAME = '"+userName+"'");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
