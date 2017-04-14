@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -14,9 +15,24 @@ import com.atuldwivedi.ors.dao.util.DBMetaData;
 public class SchemaDaoImpl implements SchemaDao {
 
 	@Override
-	public void dropTables(boolean dropExistingTable) {
-		// TODO Auto-generated method stub
+	public void dropTables(String path) {
+		DBMetaData dbMetaData = new DBMetaData();
+		List<String> dbTables = dbMetaData.getTables();
+		List<String> applicationTables = dbMetaData.getApplicationTables(path);
 
+		for (String appTable : applicationTables) {
+			for (String dbTable : dbTables) {
+				if (appTable.equalsIgnoreCase(dbTable)) {
+					System.out.println("Dropping table: " + appTable);
+					try (Connection con = ConnectionProvider.getConnection();
+							Statement stmt = con.createStatement();) {
+						stmt.execute("DROP TABLE " + appTable);
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
 	}
 
 	@Override
@@ -65,16 +81,6 @@ public class SchemaDaoImpl implements SchemaDao {
 	public int inserBaseData(boolean baseDataInsertion) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-
-	public void dropTable(String table) {
-		try (Connection con = ConnectionProvider.getConnection();
-				Statement stmt = con.createStatement();) {
-			stmt.executeUpdate("DROP TABLE " + table);
-			System.out.println("Dropped " + table + " table.");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 	}
 
 }
