@@ -80,15 +80,6 @@ public class RegisterCandidateServlet extends HttpServlet {
 			candidate.setGender(request.getParameter("gender"));
 			candidate.setDob(request.getParameter("dob"));
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }

@@ -65,9 +65,6 @@ CREATE TABLE login (
   status varchar(10)
 )
 /
-INSERT INTO login
-  VALUES ('atul', 12345678, 'admin')
-/
 CREATE TABLE studentregister (
   username varchar2(50),
   name varchar2(20),
@@ -124,6 +121,7 @@ CREATE TABLE ORS_CONTACT (
 )
 /
 CREATE TABLE ORS_ADDRESS (
+  USERNAME varchar(50),
   ADDRESS_LINE1 varchar,
   ADDRESS_LINE2 varchar,
   CITY varchar,
@@ -135,6 +133,7 @@ CREATE TABLE ORS_ADDRESS (
 )
 /
 CREATE TABLE ORS_EDUCATION (
+  USERNAME varchar(50),
   COLLEGE_NAME varchar(50),
   BRANCH varchar(20),
   EDUCATION_LEVEL varchar(20),
@@ -144,6 +143,7 @@ CREATE TABLE ORS_EDUCATION (
 )
 /
 CREATE TABLE ORS_EXPERIENCE (
+  USERNAME varchar(50),
   COMPANY_NAME varchar(50),
   DESIGNATION varchar(20),
   START_YEAR NUMBER(4),

@@ -6,7 +6,7 @@
 <%@page import="java.io.*,com.atuldwivedi.ors.dao.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" session="true"
 	import="java.sql.*"%>
-<%@ taglib uri="../../WEB-INF/c.tld" prefix="c"%>
+<%@ taglib uri="../WEB-INF/c.tld" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -63,31 +63,27 @@
                             out.println("<td >" + rs.getString(3) + "</td>");
 							out.println("<td >" + rs.getString(2) + "</td>");
                             out.println("<td >" + rs.getString(4) + "</td>");
-                            String result = rs.getString(5);
-                            System.out.println(result);
-                            String passed = "Passed";
-                            String failed = "Failed";
+                           
                             %>
-                          <%--   <c:choose>
-                            <c:when test="${result eq passed}"><td bgcolor="green">Passed</td></c:when>
-                            <c:otherwise><td bgcolor='red'>Failed</td></c:otherwise>
-                            
-                            </c:choose> --%>
-					<%-- <c:if test="${result eq passed}">
-						<td bgcolor="green">${result}</td>
-					</c:if>
-					<c:if test="${result eq failed}">
-						<td bgcolor='red'>${result}</td>
-					</c:if> --%>
-					<%
+					<c:choose>
+						<c:when test="'Passed'.equals(${rs.getString(5)})">
+							<td bgcolor="green">Passed</td>
+						</c:when>
+						<c:when test="'Failed'.equals(${rs.getString(5)})">
+							<td bgcolor="green">Passed</td>
+						</c:when>
+						
+					</c:choose>
+				
+					<%-- <%
                              if(rs.getString(5).equals("Passed")){
                             	out.println("<td bgcolor='green'>" + rs.getString(5) + "</td>");
                             }
                             else{
                             	out.println("<td  bgcolor='red'>" + rs.getString(5) + "</td>");
                             } 
-                            
-
+                             --%>
+<%
                             out.println("</tr>");
                         }%>
 				</table> <%
