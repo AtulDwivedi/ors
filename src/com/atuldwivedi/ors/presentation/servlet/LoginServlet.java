@@ -20,7 +20,7 @@ import com.sun.org.apache.xml.internal.security.c14n.CanonicalizerSpi;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
+@WebServlet(urlPatterns={"/LoginServlet", "/UpdatePassword"})
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -36,7 +36,10 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Request URI: "+request.getRequestURI());
+		String requestedURI = request.getRequestURI();
+		
+		if(requestedURI.contains("LoginServlet")){
+		
 		String userName = request.getParameter("username");
 		String password = request.getParameter("password");
 
@@ -75,6 +78,11 @@ public class LoginServlet extends HttpServlet {
 		}
 		else{
 			response.sendRedirect("common/Login.jsp");
+		}
+		
+		}
+		else if(requestedURI.contains("UpdatePassword")){
+			if(request)
 		}
 	}
 

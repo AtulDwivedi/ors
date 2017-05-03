@@ -22,7 +22,7 @@
       <ul>
 	    <li><a href="<%=request.getContextPath() +"/index.jsp" %>">Home</a><br>
         </li><li><a href="<%=request.getContextPath() +"/EditCompanyDetailsServlet" %>">Edit Profile</a><br>
-        </li><li><a href="<%=request.getContextPath() +"/ComChangePassword.jsp" %>">Change Password</a><br>
+        </li><li><a href="<%=request.getContextPath() +"/company/ComChangePassword.jsp" %>">Change Password</a><br>
         <span class="style4"> Job Details</span></li>
         <li><a href="<%=request.getContextPath() +"/company/AddJobDetails.jsp" %>"> Add</a><br>
         </li>

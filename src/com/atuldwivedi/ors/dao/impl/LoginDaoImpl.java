@@ -1,6 +1,7 @@
 package com.atuldwivedi.ors.dao.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -50,5 +51,18 @@ public class LoginDaoImpl implements LoginDao {
 			e.printStackTrace();
 		}
 		return insertedRecordCount;
+	}
+
+	@Override
+	public int updatePassword(String userName, String oldPassword, String newPassword) {
+		int retVal = 0;
+
+		try(Connection con = ConnectionProvider.getConnection(); Statement stmt = con.createStatement()){
+			String updatePasswordQuery = "Update Login set Password='" + newPassword + "'where Username='" + userName + "'and Password='" + oldPassword + "'";
+			retVal = stmt.executeUpdate(updatePasswordQuery);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return retVal;
 	}
 }
