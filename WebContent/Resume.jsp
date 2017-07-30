@@ -3,7 +3,7 @@
     Created on : Nov 15, 2012, 11:22:10 AM
     Author     : user
 --%>
-<%@page import="java.io.*,java.sql.*,conn.*"%>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -36,7 +36,7 @@ body {
         <%
        
         try {
-		Connection con=ConnectionProvider.getCon();
+		Connection con = ConnectionProvider.getConnection();
             String uid = request.getParameter("uid");
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("select * from Studentregister where Username='" + uid + "'");

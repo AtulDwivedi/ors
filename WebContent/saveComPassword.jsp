@@ -3,7 +3,7 @@
     Created on : Nov 19, 2012, 12:52:52 PM
     Author     : Atul Dwivedi
 --%>
-<%@page import="java.io.*,java.sql.*,conn.*;"%>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.*;"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,7 +21,7 @@
             String c1 = request.getParameter("pass");
             String newpass = request.getParameter("newpass");
 
-           Connection con=ConnectionProvider.getCon();
+           Connection con = ConnectionProvider.getConnection();
 
             Statement st = con.createStatement();
             Statement st2 = con.createStatement();

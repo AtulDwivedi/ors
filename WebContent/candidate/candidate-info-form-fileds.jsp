@@ -1,3 +1,4 @@
+<%@ taglib uri="../WEB-INF/c.tld" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,7 +15,7 @@
 				<label>Name</label>
 			</div>
 			<div class="div1-2">
-				<input type="text" name="name" size="30" maxlength="30" value='' />
+				<input type="text" name="name" size="30" maxlength="30" value="<c:out value="${not empty requestScope.cand.name ? requestScope.cand.name : ''}" />" placeholer="<c:out value="${empty requestScope.cand.name ? 'Enter name' : 'dssdfs'}" />" />
 			</div>
 		</div>
 

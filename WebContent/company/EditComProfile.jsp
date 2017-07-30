@@ -1,6 +1,6 @@
 
 <%@page import="com.atuldwivedi.ors.model.Company"%>
-<%@page import="java.io.*,conn.*,java.sql.*"%>
+<%@page import="java.io.* %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -115,7 +115,7 @@
 	</script>
 
     <body style="margin:0px" bgcolor="#FFFFFF">
-    <jsp:useBean id="cep" class="bean.CompEditProfile" />
+    <jsp:useBean id="cep" class="com.atuldwivedi.ors.bean.CompEditProfile" />
 <jsp:setProperty name="cep" property="*" />
         <table width="100%" border="1" bgcolor="#FFFFFF">
             <tr>
@@ -131,7 +131,7 @@
             
             String c1 = (String) session.getAttribute("s1");
 			System.out.println(c1);
-           	Connection con=ConnectionProvider.getCon();
+           	Connection con = ConnectionProvider.getConnection();
 			Statement st = con.createStatement();
 
 

@@ -27,4 +27,15 @@ public class LoginServiceImpl implements LoginService {
 		return result;
 	}
 
+	@Override
+	public int updatePassword(String userName, String oldPassword,
+			String newPassword) {
+		int result = 0;
+
+		LoginDao loginDao = new LoginDaoImpl();
+		result = loginDao.updatePassword(userName, oldPassword, newPassword);
+
+		return result;
+	}
+
 }

@@ -15,7 +15,7 @@
 			</div>
 			<div class="div1-2">
 				<input type="text" name="emailId" size="30" maxlength="30"
-					placeholder="Email Id" />
+					value="<c:out value="${not empty requestScope.cand.name ? requestScope.cand.name : ''}" />" placeholder="<c:out value="${empty requestScope.cand.name ? 'Enter name' : 'dssdfs'}" />" />
 			</div>
 		</div>
 

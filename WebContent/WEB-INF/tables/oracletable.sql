@@ -27,7 +27,7 @@ cutoff number(3),
 comp_name varchar2(40))
 /
 create table exam_result(
-cand_id number(10),
+cand_id varchar2(30),
 exam_id number(10),
 job_id number(10),
 marks number(3),

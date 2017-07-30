@@ -1,5 +1,5 @@
-<jsp:useBean id="candlogval" class="bean.CandLogValues"/>
-<jsp:useBean id="candregval" class="bean.CandRejValues"/>
+<jsp:useBean id="candlogval" class="com.atuldwivedi.ors.bean.CandLogValues"/>
+<jsp:useBean id="candregval" class="com.atuldwivedi.ors.bean.CandRejValues"/>
 <jsp:setProperty name="candlogval" property="*"/>
 <jsp:setProperty name="candregval" property="*"/>
 <%

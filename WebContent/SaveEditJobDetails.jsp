@@ -1,5 +1,5 @@
 <%@page import="com.atuldwivedi.ors.dao.util.ConnectionProvider,java.sql.*;"%>
-<jsp:useBean id="sejd" class="bean.SaveEditJobDetails" />
+<jsp:useBean id="sejd" class="com.atuldwivedi.ors.bean.SaveEditJobDetails" />
 <jsp:setProperty name="sejd" property="*" />
 <%
 	String c1=(String) session.getAttribute("s1");

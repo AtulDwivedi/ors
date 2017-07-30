@@ -1,5 +1,5 @@
-<jsp:useBean id="complogval" class="bean.CompLogValues"/>
-<jsp:useBean id="compregval" class="bean.CompRejValues"/>
+<jsp:useBean id="complogval" class="com.atuldwivedi.ors.bean.CompLogValues"/>
+<jsp:useBean id="compregval" class="com.atuldwivedi.ors.bean.CompRejValues"/>
 <jsp:setProperty name="complogval" property="*"/>
 <jsp:setProperty name="compregval" property="*"/>
 <%

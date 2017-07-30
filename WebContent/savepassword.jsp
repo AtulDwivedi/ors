@@ -3,7 +3,7 @@
     Created on : Nov 14, 2012, 12:36:22 PM
     Author     : user
 --%>
-<%@page import="java.io.*,java.sql.*,conn.*;"%>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.*;"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,7 +20,7 @@
                String c2 = request.getParameter("user");
                // session.getAttribute("c1", c1);
                 String c1 =request.getParameter("pass");
-          Connection con=ConnectionProvider.getCon();
+          Connection con = ConnectionProvider.getConnection();
             Statement st=con.createStatement();
               st.executeUpdate("Update Login set Password='"+request.getParameter("newpass2")+"' where Username='"+c2+"' and Password='"+c1+"'");
               %>

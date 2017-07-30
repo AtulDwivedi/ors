@@ -3,7 +3,6 @@
     Created on : Nov 11, 2012, 12:44:55 PM
     Author     : user
 --%>
-<%@page import="conn.*,java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -53,7 +52,7 @@ a:active {
 	Connection con=null;
 	try{
 		if(con==null){
-			con=ConnectionProvider.getCon();
+			con = ConnectionProvider.getConnection();
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("SELECT * FROM COMPANYREGISTER WHERE USERNAME='"+c1+"'");
 			while(rs.next()){

@@ -303,7 +303,7 @@
             }
         </script>
     </head>
-    <body style="margin:0px" bgcolor="#624631"><jsp:useBean id="cep" class="bean.CandRejValues" />
+    <body style="margin:0px" bgcolor="#624631"><jsp:useBean id="cep" class="com.atuldwivedi.ors.bean.CandRejValues" />
 <jsp:setProperty name="cep" property="*" />
         <table width="100%" border="1" bgcolor="#624631">
             <tr>

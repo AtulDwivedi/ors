@@ -7,13 +7,19 @@ import java.sql.SQLException;
 public class ConnectionProvider {
 	static Connection con;
 	public static Connection getConnection() throws SQLException{
-		if(con == null){
+		
+		String driverClass = (String) System.getProperty("driverClass");
+		String url = (String) System.getProperty("url");
+		String userName = (String) System.getProperty("userName");
+		String password = (String) System.getProperty("password");
+		
+		if(con == null || con.isClosed()){
 			try {
-				Class.forName("org.h2.Driver");
+				Class.forName(driverClass);
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
-			con = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
+			con = DriverManager.getConnection(url, userName, password);
 		}
 		return con;
 	}

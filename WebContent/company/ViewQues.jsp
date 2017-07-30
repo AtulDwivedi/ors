@@ -3,7 +3,7 @@
     Created on : Nov 18, 2012, 1:25:33 PM
     Author     : Atul Dwivedi
 --%>
-<%@page import="java.io.*,conn.*,java.sql.*"%>
+<%@page import="java.io.*,java.sql.*,com.atuldwivedi.ors.dao.util.*" session="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -57,7 +57,7 @@
             if (eid == null) {
 			
 			String c1=(String) session.getAttribute("s1");
-                Connection con=ConnectionProvider.getCon();
+                Connection con = ConnectionProvider.getConnection();
 				Statement stmt=con.createStatement();
                 Statement st = con.createStatement();
                 Statement st2 = con.createStatement();
@@ -71,7 +71,7 @@
                                     <td width="129" height="32"><span class="style15">Select an JobID </span></td>
                                     <td width="118"><label>
                                             <select name="jobid">
-                                                <%      ResultSet rs2 = st2.executeQuery("select * from EXAM where comp_name='"+name+"'");
+                                                <%      ResultSet rs2 = st2.executeQuery("select * from EXAM where comp_name='"+c1+"'");
                                         String s2 = null;
                                         // String s2=null;
                                         while (rs2.next()) {
@@ -88,7 +88,7 @@
                                 <td width="129" height="32"><span class="style15">Select an ExamID </span></td>
                                 <td width="118"><label>
                                         <select name="examid">
-                                            <%      ResultSet rs = st.executeQuery("select * from Exam where comp_name='"+name+"' ");
+                                            <%      ResultSet rs = st.executeQuery("select * from Exam where comp_name='"+c1+"' ");
                                         String s1 = null;
                                         // String s2=null;
                                         while (rs.next()) {
@@ -129,7 +129,7 @@
                       </tr>
 <%
 
- Connection con=ConnectionProvider.getCon();
+ Connection con = ConnectionProvider.getConnection();
  Statement st3 = con.createStatement();
  ResultSet rs3 = st3.executeQuery("select QUES_NO, QUES, OPTN1, OPTN2, OPTN3, OPTN4, ANS from QUESTIONS where JOB_ID='"+jid+"' and EXAM_ID='"+eid+"'");
                                         
