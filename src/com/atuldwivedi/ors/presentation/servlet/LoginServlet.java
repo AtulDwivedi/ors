@@ -82,7 +82,7 @@ public class LoginServlet extends HttpServlet {
 		
 		}
 		else if(requestedURI.contains("UpdatePassword")){
-			if(request)
+//			if(request)
 		}
 	}
 

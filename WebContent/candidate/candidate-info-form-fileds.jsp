@@ -1,4 +1,4 @@
-<%@ taglib uri="../WEB-INF/c.tld" prefix="c" %>
+<%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -43,6 +43,7 @@
 			</div>
 			<div class="div1-2">
 				<select name="gender">
+				<option value="">--Select--</option>
 					<option value="Female">Female</option>
 					<option value="Male">Male</option>
 				</select>
